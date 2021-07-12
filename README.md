@@ -24,3 +24,12 @@ You will have to guess a word by clicking the letter boxes on the screen before 
 ![First Image](/img/Phase1.png)
 ![Second Image](/img/Phase1b.png)
 ![Third Image](/img/Phase1c.png)
+
+## Phase 2
+
+After each round of the game, you can choose a word that is longer than the previous one so that after each round, the words are longer than before.
+
+### Extra Steps
+
+1. All the game interaction should be usable with only the keyboard
+2. Improve the design such that it is designed using a mobile-first strategy and responsive
