@@ -57,3 +57,23 @@
   font-family: "Shadows Into Light", cursive;
   font-weight: bold;
 }
+
+.main__link-ranking:hover::after {
+  background-image: url("../../img/left-arrow.svg");
+  background-size: 1rem;
+  height: 1rem;
+  width: 1rem;
+  content: "";
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.main__link-ranking:hover::before {
+  background-image: url("../../img/right-arrow.svg");
+  background-size: 1rem;
+  height: 1rem;
+  width: 1rem;
+  content: "";
+  display: inline-block;
+  margin-right: 0.5rem;
+}
