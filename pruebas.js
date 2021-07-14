@@ -13,7 +13,7 @@
 // Groups of words by number of characters, can be added to an external JS and imported to clasify better the code
 
 let fourLetter = {
-  1: 'door',
+  1: {word: 'door', hint: '', length: '4'},
   2: 'cafe',
   3: 'walk',
   4: 'loop',
