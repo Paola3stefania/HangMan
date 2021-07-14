@@ -21,9 +21,9 @@ You will have to guess a word by clicking the letter boxes on the screen before 
 - You can store the words that are used in an array of words.
 - The words should have different lengths so that each round has a word that is longer than the previous word.
 
-![First Image](/img/Phase1.png)
-![Second Image](/img/Phase1b.png)
-![Third Image](/img/Phase1c.png)
+![First Image](/assets/img/Phase1.png)
+![Second Image](/assets/img/Phase1b.png)
+![Third Image](/assets/img/Phase1c.png)
 
 ## Phase 2
 
