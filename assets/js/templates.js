@@ -22,63 +22,11 @@ let username = `
 
 // --------------------------------------------RANKING EASY SCREEN----------------------------------------
 
-let rankingEasy = `
-<template id="ranking-easy">
+let ranking = `
+<template id="ranking">
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
-      <h2 class="main__title-username">BEST PLAYERS - EASY</h2>
-      <section class="main__container-ranking">
-        <ol>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-        </ol>
-      </section>
-      <a href="#username" class="main__link-username">GO BACK</a>
-      <a href="#start" class="main__link-start">START</a>
-</template>
-`;
-
-// --------------------------------------------RANKING MEDIUM SCREEN----------------------------------------
-
-let rankingMedium = `
-<template id="ranking-medium">
-      <img src="/favicon.svg" alt="" />
-      <h1 class="main__title-game">HANGMAN</h1>
-      <h2 class="main__title-username">BEST PLAYERS - MEDIUM</h2>
-      <section class="main__container-ranking">
-        <ol>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-        </ol>
-      </section>
-      <a href="#username" class="main__link-username">GO BACK</a>
-      <a href="#start" class="main__link-start">START</a>
-</template>
-`;
-
-// --------------------------------------------RANKING HARD SCREEN----------------------------------------
-
-let rankingHard = `
-<template id="ranking-hard">
-      <img src="/favicon.svg" alt="" />
-      <h1 class="main__title-game">HANGMAN</h1>
-      <h2 class="main__title-username">BEST PLAYERS - HARD</h2>
+      <h2 class="main__title-username">BEST PLAYERS</h2>
       <section class="main__container-ranking">
         <ol>
           <li>Name - Score - Time</li>
