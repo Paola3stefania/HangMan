@@ -44,7 +44,7 @@ let ranking = `
 
 let game = `
 <template id="game-screen">
-  <div class="main__container">
+<div class="main__container">
     <header class="container__header">
       <p id="countdown-to-end"></p>
       <h2>USERNAME</h2>
@@ -85,6 +85,7 @@ let game = `
       <p id="display-hint">HINT</p>
       <a href="#username" class="main__link-username">RESET</a>
     </footer>
+  </div>
 </template>
 `;
 

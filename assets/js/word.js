@@ -35,11 +35,11 @@ const DISPLAYHINT = document.getElementById('display-hint') // We look for the e
 function displayWord() {
   for (let i = 0; i < currentWord.length; i++) {
     let element = document.createElement('span');
-    element.innerHTML = currentWord[i];
+    // element.innerHTML = currentWord[i];
     element.style.paddingLeft = '10px';
     DISPLAYWORD.appendChild(element);
     DISPLAYHINT.innerHTML = currentHint
-  } return
+  }
 }
 
 getGroupOfWords()
@@ -48,4 +48,4 @@ displayWord()
 
 // /* EXPORTS */
 
-export {  };
+export { currentWord };
