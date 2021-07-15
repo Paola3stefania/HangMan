@@ -76,6 +76,6 @@ function rankingOrder() {
 }
 
 finalFunction();
-rankingOrder();
+//rankingOrder();
 
 export { rankingEasy };
