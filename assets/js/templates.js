@@ -117,3 +117,5 @@ let gameOver = `
     <a href="#username" class="main__link-username">PLAY AGAIN</a>
 </template>
 `;
+
+export { username, ranking, gameEasy, youWon, gameOver };
