@@ -1,4 +1,4 @@
-import { userRegistration } from "./views/register-user";
+import { userRegistration, usuario } from "./views/register-user";
 import { endGame } from "./views/gameover";
 import { playGame } from "./views/play-game";
 import { rankingEasy } from "./views/ranking-easy";
@@ -11,9 +11,12 @@ function navigate() {
     location.hash === "#"
   ) {
     userRegistration();
-  } else if (location.hash === "#ranking") {
-  } else if (location.hash === "#ranking") {
+  } else if (location.hash === "#ranking-easy") {
     rankingEasy();
+  } else if (location.hash === "#ranking-medium") {
+    rankingMedium();
+  } else if (location.hash === "#ranking-hard") {
+    rankingHard();
   } else if (location.hash === "#game") {
     playGame();
   } else if (location.hash === "#game-over") {
@@ -30,13 +33,19 @@ function goToUsername() {
 
 function goToRanking(event) {
   event.preventDefault();
-  window.location.hash = "ranking";
+  let gameLevel = usuario.gameLevel;
+  if (gameLevel === "easy") {
+    window.location.hash = "ranking-easy";
+  } else if (gameLevel === "medium") {
+    window.location.hash = "ranking-medium";
+  } else if (gameLevel === "hard") {
+    window.location.hash = "ranking-hard";
+  }
 }
 
 function goToGame(event) {
   event.preventDefault();
   window.location.hash = "game";
-  //!Timer function
 }
 
 function goToGameOver(event) {

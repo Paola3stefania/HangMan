@@ -1,9 +1,9 @@
 import { goToUsername } from "../router.js";
+import { wrapper } from "../main";
 
 function winner() {
   //?remove event Listener before deleting de node
 
-  let wrapper = document.getElementById("app");
   //make sure that the page its empty before doing nothing
   wrapper.innerHTML = "";
 

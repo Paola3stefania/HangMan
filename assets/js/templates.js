@@ -4,7 +4,8 @@ let username = `
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">INSERT USERNAME</h2>
-      <input id="main__input-username" />
+      <input id="username-value" />
+      <span id="username-validation"></span>
       <div class="container__level">
         <label for="input-easy">
           <input type="radio" name="level" id="input-easy" />EASY

@@ -1,10 +1,10 @@
 import { goToUsername } from "../router.js";
 import { goToGame } from "../router";
+import { wrapper } from "../main";
 
 function rankingEasy() {
   //?remove event Listener before deleting de node
 
-  let wrapper = document.getElementById("app");
   //make sure that the page its empty before doing nothing
   wrapper.innerHTML = "";
 

@@ -1,10 +1,9 @@
-//import { wrapper } from "../main"
+import { wrapper } from "../main";
 import { goToUsername } from "../router.js";
 
 function endGame() {
-  //?remove event Listener before deleting de node
+  //?remove event Listener before deleting the node
 
-  let wrapper = document.getElementById("app");
   //make sure that the page its empty before doing nothing
   wrapper.innerHTML = "";
 
