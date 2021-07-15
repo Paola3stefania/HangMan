@@ -5,15 +5,7 @@ import { username } from "../templates.js";
 //register user its first screen, so it charges on load.
 //? shows the view of the username
 
-let usuario = {
-	/* id: 0,
-	name: "",
-	score: 0,
-	state: "",
-	timePlayed: 0,
-	gameLevel: "",
-	numbersOfPlays: 0, */
-};
+let usuario = {};
 
 function userRegistration() {
 	// seteo a cero todo cuando entro en registro
