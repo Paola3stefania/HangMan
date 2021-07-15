@@ -52,10 +52,10 @@ function userRegistration(){
     //*TODO maxlenght, just letters
     // necesito un campo de error tipo span para el USUARIO
     
-    usuario.name=getElementById("main__input-username").value;
+    
 
-    const usernameInput = getElementById("main__input-username");
-	const usernameInputError = document.querySelector("");
+    const usernameInput = getElementById("username-value");
+	const usernameInputError = document.querySelector("username-validation");
     const usernameRegexp= /^[a-z0-9]+$/i;
 
 
@@ -66,6 +66,8 @@ function userRegistration(){
 			usernameInputError.innerHTML = "";
 			username.classList.add("valid");
 			username.classList.remove("invalid");
+            
+            usuario.name=getElementById("username-value").value;
 		} else {
 			username.classList.remove("valid");
 			username.classList.add("invalid");
