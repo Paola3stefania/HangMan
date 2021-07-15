@@ -84,6 +84,4 @@ function userRegistration(){
 }
 
 
-
-
-
+export { userRegistration };
