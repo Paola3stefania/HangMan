@@ -30,37 +30,65 @@ function rankingEasy() {
     .querySelector(".main__link-start")
     .addEventListener("click", goToGame);
 }
-//ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
-let superObject = [];
+
+//Examples as if there were previous game records
+let superArray = [
+  { id: 0, name: "Marcel", score: 200, timePlayed: 97, gameLevel: "easy" },
+  { id: 0, name: "Tefa", score: 500, timePlayed: 37, gameLevel: "easy" },
+  { id: 0, name: "Pere", score: 100, timePlayed: 130, gameLevel: "easy" },
+];
+//New username example
+let usuarioB = {
+  id: 0,
+  name: "Carlos",
+  score: 250,
+  state: "",
+  timePlayed: 32,
+  gameLevel: "easy",
+};
+
 function finalFunction() {
-  superObject.push(usuario);
+  superArray.push(usuarioB); //In the final function (whenever the game ends), the username is pushed to the superarray
 }
 
 function rankingOrder() {
-  superObject.sort(function (a, b) {
+  superArray = superArray.sort(function (a, b) {
+    //All this function orders the superarray comparing one element with the others
     if (a.score > b.score) {
-      return 1;
-    }
-    if (a.score < b.score) {
       return -1;
     }
-    return 0;
+    if (a.score < b.score) {
+      return 1;
+    } else {
+      return 0;
+    }
   });
-  for (el in superObject) {
+  console.log(superArray);
+  for (let i = 0; i < superArray.length; i++) {
+    //Now we want for each of the objects inside the array to print a message in the list
+    let rankingList = document.querySelector(".main__container-ranking ol"); //List selected
     let myScore = document.createElement("li");
-    newScore.innerHTML =
-      usuario.name +
+    myScore.innerHTML =
+      superArray[i].name +
       " " +
       "-" +
       " " +
-      usuario.timePlayed +
+      superArray[i].timePlayed +
+      " " +
+      "seconds" +
       " " +
       "-" +
       " " +
-      usuario.score; //We create a string that stores old values from old usernames
+      superArray[i].score +
+      " " +
+      "points";
     rankingList.appendChild(myScore); //We add the new li to the ordered ranking list
-    myRanking(myScore);
+    console.log(rankingList);
+    console.log(myScore);
   }
 }
+
+finalFunction();
+rankingOrder();
 
 export { rankingEasy };

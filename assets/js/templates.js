@@ -20,6 +20,7 @@ let username = `
       </div>
       <a href="#start" id="link-start" class="main__link-start">START</a>
       <a href="#ranking" id="link-ranking" class="main__link-ranking">RANKING</a>
+    </div>
 </template>`;
 
 // --------------------------------------------RANKING SCREEN----------------------------------------
@@ -31,18 +32,7 @@ let ranking = `
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">BEST PLAYERS</h2>
       <section class="main__container-ranking">
-        <ol>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-        </ol>
+        <ol></ol>
       </section>
       <a href="#username" class="main__link-username">GO BACK</a>
       <a href="#start" class="main__link-start">START</a>
@@ -79,20 +69,9 @@ let youWon = `
     <h1 class="main__title-game">HANGMAN</h1>
     <h2>USERNAME, YOU BEAT THE GAME</h2>
     <h2>CONGRATULATIONS!!</h2>
-    <div class="container__div-ranking">
+    <div class="main__container-ranking">
         <h3>BEST PLAYERS - LEVEL</h3>
-        <ol>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        </ol>
+        <ol></ol>
     </div>
     <a href="#username" class="main__link-username">PLAY AGAIN</a>
   </div>
@@ -108,20 +87,9 @@ let gameOver = `
     <h1 class="main__title-game">HANGMAN</h1>
     <h2>NICE TRY, USERNAME</h2>
     <h2>BUT TRY AGAIN!!</h2>
-    <div class="container__div-ranking">
+    <div class="main__container-ranking">
         <h3>BEST PLAYERS - LEVEL</h3>
-        <ol>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        <li>Name - Score - Time</li>
-        </ol>
+        <ol></ol>
     </div>
     <a href="#username" class="main__link-username">PLAY AGAIN</a>
   </div>
