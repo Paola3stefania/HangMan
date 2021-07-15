@@ -21,7 +21,7 @@ let username = `
       <a href="#ranking" class="main__link-ranking">RANKING</a>
 </template>`;
 
-// --------------------------------------------RANKING EASY SCREEN----------------------------------------
+// --------------------------------------------RANKING SCREEN----------------------------------------
 
 let ranking = `
 <template id="ranking">
