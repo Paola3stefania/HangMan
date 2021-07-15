@@ -4,8 +4,10 @@ import { game } from "../templates.js";
 import { usuario } from "./register-user.js";
 
 function playGame() {
-	//?remove event Listener before deleting de node
+	//numero de juegos
 	usuario.numbersOfPlays += 1;
+	//?remove event Listener before deleting de node
+
 	console.log("usuario en play-game", usuario);
 
 	if (document.getElementById("username")) {
