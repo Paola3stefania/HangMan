@@ -5,7 +5,7 @@ let username = `
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">INSERT USERNAME</h2>
       <input id="username-value" />
-      <span id="username-validation"></span>
+      <span id="username-validation">Alphanumeric, max 6 characters</span>
       <div class="container__level">
         <label for="input-easy">
           <input type="radio" name="level" id="input-easy" />EASY
@@ -17,8 +17,8 @@ let username = `
           <input type="radio" name="level" id="input-hard" />HARD
         </label>
       </div>
-      <a href="#start" class="main__link-start">START</a>
-      <a href="#ranking" class="main__link-ranking">RANKING</a>
+      <a href="#start" id="link-start" class="main__link-start">START</a>
+      <a href="#ranking" id="link-ranking" class="main__link-ranking">RANKING</a>
 </template>`;
 
 // --------------------------------------------RANKING EASY SCREEN----------------------------------------

@@ -82,3 +82,8 @@
   font-family: "Shadows Into Light", cursive;
   font-weight: bold;
 }
+
+.invalid{
+  color:red;
+  border-color: red;
+}
