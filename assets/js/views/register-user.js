@@ -10,7 +10,7 @@ let usuario = {
 	timePlayed: 0,
 	gameLevel: "",
 };
-
+console.log("hola");
 //register user its first screen, so it charges on load.
 //? shows the view of the username
 
@@ -33,33 +33,33 @@ function userRegistration() {
 	wrapper.appendChild(copyNode);
 
 	//botones event listener: start & ranking
-	document.querySelector("link_start").addEventListener("click", goToGame);
-	document.querySelector("link_ranking").addEventListener("click", goToRanking);
+	document.getElementById("link-start").addEventListener("click", goToGame);
+	document
+		.getElementById("link-ranking")
+		.addEventListener("click", goToRanking);
 
 	//save the game level
-	usuario.gameLevel = document.getElementById("main__input-username").value;
+	//usuario.gameLevel = document.getElementById("main__input-username").value;
 
 	//validate name
 	//*TODO maxlenght, just letters
 	// necesito un campo de error tipo span para el USUARIO
 
-	const usernameInput = getElementById("username-value");
-	const usernameInputError = document.querySelector("username-validation");
 	const usernameRegexp = /^[a-z0-9]+$/i;
+	const usernameInput = document.getElementById("username-value");
 
-	username.addEventListener("change", function () {
+	usernameInput.addEventListener("change", function () {
+		const usernameInputError = document.getElementById("username-validation");
 		const test = usernameRegexp.test(usernameInput.value);
 
 		if (test) {
 			usernameInputError.innerHTML = "";
-			username.classList.add("valid");
-			username.classList.remove("invalid");
 
-			usuario.name = getElementById("username-value").value;
+			usernameInput.classList.remove("invalid");
+			usuario.name = usernameInput.value;
 		} else {
-			username.classList.remove("valid");
-			username.classList.add("invalid");
-			usernameInputError.innerHTML = "Insert valid email";
+			usernameInput.classList.add("invalid");
+			usernameInputError.innerHTML = "Insert valid username";
 		}
 	});
 

@@ -1,7 +1,7 @@
 import { goToUsername } from "../router.js";
-import { goToGame } from "../router";
-import { wrapper } from "../main";
-import { usuario } from "./register-user";
+import { goToGame } from "../router.js";
+import { wrapper } from "../main.js";
+import { usuario } from "./register-user.js";
 
 function rankingEasy() {
   //?remove event Listener before deleting de node
