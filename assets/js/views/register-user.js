@@ -2,6 +2,7 @@
 
 import { username } from "../templates";
 
+
 //*TODO import {startGame, ranking} from "router.js";
 
 
@@ -38,10 +39,10 @@ function userRegistration(){
 	wrapper.appendChild(copyNode);
 
     //botones event listener: start & ranking
-    //*TODO startGame .. como la llamo Gonza? en el router ambas funciones?
+    //*TODO startGame .. como la llamo Gonza? en el router ambas funciones arreglar?
 
 	document.querySelector("link_start").addEventListener("click", startGame);
-    document.querySelector("link_ranking").addEventListener("click", ranking);
+    document.querySelector("link_ranking").addEventListener("click", goranking);
 
     //ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
 
