@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: bold;
 }
 
 .main__container {
@@ -81,4 +83,9 @@
 .container__level {
   font-family: "Shadows Into Light", cursive;
   font-weight: bold;
+}
+
+.invalid{
+  color:red;
+  border-color: red;
 }
