@@ -66,12 +66,10 @@ function userRegistration(){
 			usernameInputError.innerHTML = "";
 			username.classList.add("valid");
 			username.classList.remove("invalid");
-	
 		} else {
 			username.classList.remove("valid");
 			username.classList.add("invalid");
 			usernameInputError.innerHTML = "Insert valid email";
-		
 		}
 	});
 
