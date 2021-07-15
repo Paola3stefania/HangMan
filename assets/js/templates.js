@@ -18,14 +18,8 @@ let username = `
           <input type="radio" name="level" id="input-hard" />HARD
         </label>
       </div>
-<<<<<<< HEAD
-      <a href="#start" class="main__link-start">START</a>
-      <a href="#ranking" class="main__link-ranking">RANKING</a>
-    </div>
-=======
       <a href="#start" id="link-start" class="main__link-start">START</a>
       <a href="#ranking" id="link-ranking" class="main__link-ranking">RANKING</a>
->>>>>>> user_and_game
 </template>`;
 
 // --------------------------------------------RANKING SCREEN----------------------------------------
