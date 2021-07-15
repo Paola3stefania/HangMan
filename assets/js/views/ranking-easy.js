@@ -4,70 +4,77 @@ import { wrapper } from "../main.js";
 import { usuario } from "./register-user.js";
 
 function rankingEasy() {
-	//?remove event Listener before deleting de node
+  //?remove event Listener before deleting de node
 
-	//make sure that the page its empty before doing nothing
-	wrapper.innerHTML = "";
+  //make sure that the page its empty before doing nothing
+  wrapper.innerHTML = "";
 
-	//clone the template of ranking
-	wrapper.insertAdjacentHTML("beforeend", ranking);
+  //clone the template of ranking
+  wrapper.insertAdjacentHTML("beforeend", ranking);
 
-	let rankingNode = document.getElementById("ranking").content;
-	let copyNode = document.importNode(rankingNode, true);
+  let rankingNode = document.getElementById("ranking").content;
+  let copyNode = document.importNode(rankingNode, true);
 
-	//delete de template from the html
-	wrapper.innerHTML = "";
+  //delete de template from the html
+  wrapper.innerHTML = "";
 
-	wrapper.appendChild(copyNode);
+  wrapper.appendChild(copyNode);
 
-	//botones event listener: username & start
+  //botones event listener: username & start
 
-	document
-		.querySelector(".main__link-username")
-		.addEventListener("click", goToUsername);
+  document
+    .querySelector(".main__link-username")
+    .addEventListener("click", goToUsername);
 
-	document
-		.querySelector(".main__link-start")
-		.addEventListener("click", goToGame);
+  document
+    .querySelector(".main__link-start")
+    .addEventListener("click", goToGame);
 }
-//ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
+//Examples as if there were previous game records
+let superArray = [
+  { id: 0, name: "Marcel", score: 200, timePlayed: 97, gameLevel: "easy" },
+  { id: 0, name: "Tefa", score: 500, timePlayed: 37, gameLevel: "easy" },
+  { id: 0, name: "Pere", score: 100, timePlayed: 130, gameLevel: "easy" },
+];
+//New username example
+let usuarioB = {
+  id: 0,
+  name: "Carlos",
+  score: 250,
+  state: "",
+  timePlayed: 32,
+  gameLevel: "easy",
+};
 
 function finalFunction() {
-	let rankingList = document.querySelectorAll(".main__container-ranking li");
-	let myScore = document.createElement("li");
-	newScore.innerHTML =
-		usuario.name +
-		" " +
-		"-" +
-		" " +
-		usuario.timePlayed +
-		" " +
-		"-" +
-		" " +
-		usuario.score; //We create a string that stores old values from old usernames
-	rankingList.appendChild(myScore); //We add the new li to the ordered ranking list
-	myRanking(myScore);
+  superArray.push(usuarioB); //In the final function (whenever the game ends), the username is pushed to the superarray
 }
 
-function myRanking(myScore) {
-	let rankingList = document.querySelectorAll(".main__container-ranking li");
-	//I need now to iterate across the ranking list and compare the scores
-	for (i = 0; i < rankingList.length; i++) {
-		let otherScore = rankingList[i].substring(
-			rankingList[i].lastIndexOf(" "),
-			rankingList[i].length
-		); //I am getting the score part from the html text of the li inside the ranking list
-		console.log(rankingList[i].lastIndexOf(" "));
-		console.log(
-			rankingList[i].substring(
-				rankingList[i].lastIndexOf(" "),
-				rankingList[i].length
-			)
-		);
-		if (usuario.score > otherScore) {
-			//If the score is bigger than the other li, add one to its position
-		}
-	}
+function rankingOrder() {
+  superArray = superArray.sort(function (a, b) {
+    //All this function orders the superarray comparing one element with the others
+    if (a.score > b.score) {
+      return -1;
+    }
+    if (a.score < b.score) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  console.log(superArray);
+  for (let i = 0; i < superArray.length; i++) {
+    //Now we want for each of the objects inside the array to print a message in the list
+    let rankingList = document.querySelector(".main__container-ranking ol"); //List selected
+    let myScore = document.createElement("li");
+    myScore.innerHTML = `${superArray[i].name} - ${superArray[i].timePlayed} seconds - ${superArray[i].score} points`;
+    rankingList.appendChild(myScore); //We add the new li to the ordered ranking list
+    console.log(rankingList);
+    console.log(myScore);
+  }
 }
+
+finalFunction();
+//rankingOrder();
 
 export { rankingEasy };
