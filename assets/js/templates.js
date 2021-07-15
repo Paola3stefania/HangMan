@@ -51,9 +51,11 @@ let game = `
 <div class="main__container">
     <header class="container__header">
       <p id="countdown-to-end"></p>
-      <h2>USERNAME</h2>
-      <h2>SCORE</h2>
+      <h2 id="username-display">USERNAME</h2>
+      <h2 id="score-display">SCORE</h2>
       <img src="" alt="Star">
+      <p id="easy-hint"></p>
+      <button id="help" >HELP ME</button>
     </header>
     <div class="container__div-header-emptyletters" id="display-word"></div>
     <img src="" alt="Hangman">
