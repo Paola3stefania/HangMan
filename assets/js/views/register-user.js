@@ -10,7 +10,7 @@ let usuario = {
 	timePlayed: 0,
 	gameLevel: "",
 };
-
+console.log("hola");
 //register user its first screen, so it charges on load.
 //? shows the view of the username
 
