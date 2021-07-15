@@ -23,7 +23,7 @@ TIMERS
 por palabra, CRONOMETRO
 de transición entre palabra y palabra cuenta regresiva
 
-calculo del tiempo desde el inicio de juego al final 
+calculo del tiempo desde el inicio de juego al final
 
 ------
 
@@ -33,9 +33,7 @@ divs + buttons. Display pantalla.
 ordenador - key events and clicks. Solo las letras pueden ser accionadas.
 mobile - solo clicks
 
-letra enter -- registro de usuario
-
-tachar letra que esta mal , la que esta bien se circula .
+tachar letra que esta mal , la que esta bien se circula
 
 subir error al objeto intermedio, de errores del juego. 
 Contador error (sumando uno)

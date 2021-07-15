@@ -9,7 +9,7 @@ document.addEventListener('keydown', (event) => { // ! CARE WITH ALT, TAB, ETC.
   let letter = event.key;
   let regExpTest = /[a-z]+/g;
   regExpTest.test(letter) ? lookForLetter(letter) : "";
-  blockLetter(letter);
+  blockLetter(letter); // We block a new interaction with the letter button
 })
 
 function blockLetter(letter) {
