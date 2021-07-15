@@ -2,6 +2,7 @@
 
 import { username } from "../templates";
 
+
 //*TODO import {startGame, ranking} from "router.js";
 
 
@@ -38,10 +39,10 @@ function userRegistration(){
 	wrapper.appendChild(copyNode);
 
     //botones event listener: start & ranking
-    //*TODO startGame .. como la llamo Gonza? en el router ambas funciones?
+    //*TODO startGame .. como la llamo Gonza? en el router ambas funciones arreglar?
 
 	document.querySelector("link_start").addEventListener("click", startGame);
-    document.querySelector("link_ranking").addEventListener("click", ranking);
+    document.querySelector("link_ranking").addEventListener("click", goranking);
 
     //ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
 
@@ -51,10 +52,10 @@ function userRegistration(){
     //*TODO maxlenght, just letters
     // necesito un campo de error tipo span para el USUARIO
     
-    usuario.name=getElementById("main__input-username").value;
+    
 
-    const usernameInput = getElementById("main__input-username");
-	const usernameInputError = document.querySelector("");
+    const usernameInput = getElementById("username-value");
+	const usernameInputError = document.querySelector("username-validation");
     const usernameRegexp= /^[a-z0-9]+$/i;
 
 
@@ -65,12 +66,12 @@ function userRegistration(){
 			usernameInputError.innerHTML = "";
 			username.classList.add("valid");
 			username.classList.remove("invalid");
-	
+            
+            usuario.name=getElementById("username-value").value;
 		} else {
 			username.classList.remove("valid");
 			username.classList.add("invalid");
 			usernameInputError.innerHTML = "Insert valid email";
-		
 		}
 	});
 
