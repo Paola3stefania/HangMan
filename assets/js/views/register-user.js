@@ -51,19 +51,14 @@ function userRegistration() {
 		.getElementById("link-ranking")
 		.addEventListener("click", goToRanking);
 
-	document.getElementById("username-value").addEventListener("keydown", (e) => {
+	//DOnt want to Enter do something
+	window.addEventListener("keydown", (e) => {
 		if (e.key == "Enter") {
 			e.preventDefault();
 		}
 	});
 
-	//save the game level
-	//usuario.gameLevel = document.getElementById("main__input-username").value;
-
 	//validate name
-	//*TODO maxlenght, just letters
-	// necesito un campo de error tipo span para el USUARIO
-
 	const usernameRegexp = /^[a-z0-9]+$/i;
 
 	document
@@ -84,15 +79,13 @@ function userRegistration() {
 			}
 		});
 
+	//sets the level property into the user
 	let radioButtons = document.querySelectorAll('input[name="level"]');
-
 	for (const btn of radioButtons) {
-		btn.addEventListener("click", isChecked);
+		btn.addEventListener("click", (e) => {
+			usuario.gameLevel = e.target.value;
+		});
 	}
-
-	function isChecked(event) {
-		usuario.gameLevel = event.target.value;
-	}
-}
+} //end UserRegistration
 
 export { userRegistration, usuario };
