@@ -4,7 +4,8 @@ let username = `
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">INSERT USERNAME</h2>
-      <input id="main__input-username" />
+      <input id="username-value" />
+      <span id="username-validation"></span>
       <div class="container__level">
         <label for="input-easy">
           <input type="radio" name="level" id="input-easy" />EASY
@@ -22,63 +23,11 @@ let username = `
 
 // --------------------------------------------RANKING EASY SCREEN----------------------------------------
 
-let rankingEasy = `
-<template id="ranking-easy">
+let ranking = `
+<template id="ranking">
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
-      <h2 class="main__title-username">BEST PLAYERS - EASY</h2>
-      <section class="main__container-ranking">
-        <ol>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-        </ol>
-      </section>
-      <a href="#username" class="main__link-username">GO BACK</a>
-      <a href="#start" class="main__link-start">START</a>
-</template>
-`;
-
-// --------------------------------------------RANKING MEDIUM SCREEN----------------------------------------
-
-let rankingMedium = `
-<template id="ranking-medium">
-      <img src="/favicon.svg" alt="" />
-      <h1 class="main__title-game">HANGMAN</h1>
-      <h2 class="main__title-username">BEST PLAYERS - MEDIUM</h2>
-      <section class="main__container-ranking">
-        <ol>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-          <li>Name - Score - Time</li>
-        </ol>
-      </section>
-      <a href="#username" class="main__link-username">GO BACK</a>
-      <a href="#start" class="main__link-start">START</a>
-</template>
-`;
-
-// --------------------------------------------RANKING HARD SCREEN----------------------------------------
-
-let rankingHard = `
-<template id="ranking-hard">
-      <img src="/favicon.svg" alt="" />
-      <h1 class="main__title-game">HANGMAN</h1>
-      <h2 class="main__title-username">BEST PLAYERS - HARD</h2>
+      <h2 class="main__title-username">BEST PLAYERS</h2>
       <section class="main__container-ranking">
         <ol>
           <li>Name - Score - Time</li>
@@ -100,8 +49,8 @@ let rankingHard = `
 
 // --------------------------------------------GAME EASY SCREEN----------------------------------------
 
-let gameEasy = `
-<template id="game-easy">
+let game = `
+<template id="game-screen">
 <div class="container__div-header">
         <img src="" alt="Clock">
         <h2>USERNAME</h2>
@@ -169,3 +118,5 @@ let gameOver = `
     <a href="#username" class="main__link-username">PLAY AGAIN</a>
 </template>
 `;
+
+export { username, ranking, gameEasy, youWon, gameOver };

@@ -1,4 +1,8 @@
-console.log("hello world");
+import { navigate } from "./router.js";
 
-document.getElementById("app").innerHTML = "hello world";
-console.log(document.getElementById("app"));
+window.addEventListener("hashchange", navigate);
+var wrapper = document.getElementById("app");
+
+navigate();
+
+export { wrapper };

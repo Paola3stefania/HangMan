@@ -1,0 +1,52 @@
+TAREAS:
+
+------
+
+PALABRA
+
+ir cotejando el largo.
+
+Vayan apareciendo letras según se acierten. Interactua con el teclado
+
+SI no esta en la palabra la letra, ir a dibujar una parte del muñeco. 
+
+SI se acierta la letra, subir puntuación o si se erra.
+
+Reiniciar cronómetro -  con cuenta regresiva de cronómetro.
+
+BOOLEAN: true or false. Si esta usada no volver a usar
+
+------
+
+TIMERS
+
+por palabra, CRONOMETRO
+de transición entre palabra y palabra cuenta regresiva
+
+calculo del tiempo desde el inicio de juego al final
+
+------
+
+KEYBOARD
+
+divs + buttons. Display pantalla.
+ordenador - key events and clicks. Solo las letras pueden ser accionadas.
+mobile - solo clicks
+
+tachar letra que esta mal , la que esta bien se circula
+
+subir error al objeto intermedio, de errores del juego. 
+Contador error (sumando uno)
+
+------
+
+PALABRAS - BDD
+
+2 palabras por largo de palabra.
+
+largos de palabras: de 4 letras a 9 max
+
+10 palabras por grupo 
+armar base de datos de palabras. 
+
+------
