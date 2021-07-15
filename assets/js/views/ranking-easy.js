@@ -4,7 +4,10 @@ import { wrapper } from "../main.js";
 import { usuario } from "./register-user.js";
 
 function rankingEasy() {
-  //?remove event Listener before deleting de node
+  document.getElementById("link-start").removeEventListener("click", goToGame);
+  document
+    .addElementById("link-ranking")
+    .removeEventListener("click", goToRanking);
 
   //make sure that the page its empty before doing nothing
   wrapper.innerHTML = "";
