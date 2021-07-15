@@ -19,8 +19,9 @@ let username = `
             <input type="radio" name="level" value="hard" id="input-hard" />HARD
           </label>
         </div>
+        
+        <input id="link-ranking" type="button" value="RANKING" class="main__link-ranking">
         <input type="submit" id="play" name="play" value="START" class="main__link-start" />
-        <button id="link-ranking" class="main__link-ranking">RANKING</button>
         </div>
       </form>
     

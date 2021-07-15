@@ -5,13 +5,21 @@ import { usuario } from "./register-user.js";
 
 function playGame() {
 	//?remove event Listener before deleting de node
+	usuario.numbersOfPlays += 1;
+	console.log("usuario en play-game", usuario);
 
-	document
-		.querySelector("#username-form")
-		.removeEventListener("submit", goToGame);
-	document
-		.getElementById("link-ranking")
-		.removeEventListener("click", goToRanking);
+	if (document.getElementById("username")) {
+		document
+			.querySelector("#username-form")
+			.removeEventListener("submit", goToGame);
+		document
+			.getElementById("link-ranking")
+			.removeEventListener("click", goToRanking);
+	} else if (document.getElementById("ranking")) {
+		document
+			.querySelector(".main__link-username")
+			.removeEventListener("click", goToUsername);
+	}
 
 	//make sure that the page its empty before doing nothing
 	wrapper.innerHTML = "";

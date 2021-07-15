@@ -1,13 +1,17 @@
 import { goToUsername, goToGame, goToRanking } from "../router.js";
 import { wrapper } from "../main.js";
 import { ranking } from "../templates.js";
+import { usuario } from "./register-user.js";
+
 function rankingHard() {
-	document
-		.querySelector("#username-form")
-		.removeEventListener("submit", goToGame);
-	document
-		.getElementById("link-ranking")
-		.removeEventListener("click", goToRanking);
+	if (document.getElementById("username")) {
+		document
+			.querySelector("#username-form")
+			.removeEventListener("submit", goToGame);
+		document
+			.getElementById("link-ranking")
+			.removeEventListener("click", goToRanking);
+	}
 
 	//make sure that the page its empty before doing nothing
 	wrapper.innerHTML = "";

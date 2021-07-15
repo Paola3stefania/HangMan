@@ -2,19 +2,34 @@ import { goToRanking, goToGame, goToUsername } from "../router.js";
 import { wrapper } from "../main.js";
 import { username } from "../templates.js";
 
+//register user its first screen, so it charges on load.
+//? shows the view of the username
+
 let usuario = {
-	id: 0,
+	/* id: 0,
 	name: "",
 	score: 0,
 	state: "",
 	timePlayed: 0,
 	gameLevel: "",
+	numbersOfPlays: 0, */
 };
 
-//register user its first screen, so it charges on load.
-//? shows the view of the username
-
 function userRegistration() {
+	// seteo a cero todo cuando entro en registro
+
+	console.log("entre aqui");
+	usuario = {
+		id: 0,
+		name: "",
+		score: 0,
+		state: "",
+		timePlayed: 0,
+		gameLevel: "",
+		numbersOfPlays: 0,
+	};
+	console.log(usuario);
+
 	//borrar los que vienen de ranking tmb
 	if (wrapper.firstChild != null) {
 		if (
@@ -49,7 +64,7 @@ function userRegistration() {
 	document.querySelector("#username-form").addEventListener("submit", goToGame);
 	document
 		.getElementById("link-ranking")
-		.addEventListener("click", goToRanking);
+		.addEventListener("click", showRanking);
 
 	//DOnt want to Enter do something
 	window.addEventListener("keydown", (e) => {
@@ -79,11 +94,19 @@ function userRegistration() {
 			}
 		});
 
+	function showRanking(event) {
+		if (usuario.name != "") {
+			console.log(usuario.name);
+			goToRanking(event);
+		}
+	}
 	//sets the level property into the user
 	let radioButtons = document.querySelectorAll('input[name="level"]');
+
 	for (const btn of radioButtons) {
 		btn.addEventListener("click", (e) => {
 			usuario.gameLevel = e.target.value;
+			console.log(usuario.gameLevel);
 		});
 	}
 } //end UserRegistration
