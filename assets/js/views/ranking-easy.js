@@ -68,20 +68,7 @@ function rankingOrder() {
     //Now we want for each of the objects inside the array to print a message in the list
     let rankingList = document.querySelector(".main__container-ranking ol"); //List selected
     let myScore = document.createElement("li");
-    myScore.innerHTML =
-      superArray[i].name +
-      " " +
-      "-" +
-      " " +
-      superArray[i].timePlayed +
-      " " +
-      "seconds" +
-      " " +
-      "-" +
-      " " +
-      superArray[i].score +
-      " " +
-      "points";
+    myScore.innerHTML = `${superArray[i].name} - ${superArray[i].timePlayed} seconds - ${superArray[i].score} points`;
     rankingList.appendChild(myScore); //We add the new li to the ordered ranking list
     console.log(rankingList);
     console.log(myScore);
