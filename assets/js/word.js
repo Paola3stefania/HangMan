@@ -13,37 +13,39 @@ function getRandomNumber(minValue, maxValue) {
 
 let currentLetters = 4 // We declare how many letters our current word has
 let currentGroup
+let currentWord
+let currentHint
 
 function getGroupOfWords() { // We select the group of words by the amount of letters of currentLetters
   let group = wordsInPlay[currentLetters];
-  console.log(group)
   currentGroup = group
-  return group;
 }
 
+// TODO - THIS FUNCTION SHOULD DISPLAY WORDS THAT HAVE NOT BEEN DISPLAYED BEFORE
 function getRandomWord() { // To select a random word from our group, we need a random number from 1 to 10 (amount of words in each group)
   let position = getRandomNumber(1,10); // Max number, if we want escalation, should be a variable that measures the max key in the object
-  return group[position];
+  currentWord = currentGroup[position].word;
+  currentHint = currentGroup[position].hint;
+  currentGroup[position].displayed = true;
 }
 
 const DISPLAYWORD = document.getElementById('display-word') // We look for the element in the HTML where we are going to print our word
+const DISPLAYHINT = document.getElementById('display-hint') // We look for the element in the HTML where we are going to print our hint
 
 function displayWord() {
-  for (let i = 0; i < testWord.length; i++) {
+  for (let i = 0; i < currentWord.length; i++) {
     let element = document.createElement('span');
-    element.innerHTML = testWord[i];
-    element.style.textDecoration = 'underline';
+    element.innerHTML = currentWord[i];
     element.style.paddingLeft = '10px';
     DISPLAYWORD.appendChild(element);
+    DISPLAYHINT.innerHTML = currentHint
   } return
 }
 
-console.log("Hola Paola")
-
-function test() {
-  console.log("Esto es una prueba")
-}
+getGroupOfWords()
+getRandomWord()
+displayWord()
 
 // /* EXPORTS */
 
-export { test };
+export {  };
