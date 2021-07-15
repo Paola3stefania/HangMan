@@ -1,10 +1,12 @@
-import { goToUsername } from "../router.js";
+import { goToGame, goToRanking, goToUsername } from "../router.js";
 import { wrapper } from "../main.js";
 
 function playGame() {
 	//?remove event Listener before deleting de node
-	document.querySelector("link_start").removeEventListener("click", startGame);
-	document.querySelector("link_ranking").removeEventListener("click", ranking);
+	document.getElementById("link-start").removeEventListener("click", goToGame);
+	document
+		.getElementById("link-ranking")
+		.removeEventListener("click", goToRanking);
 
 	//make sure that the page its empty before doing nothing
 	wrapper.innerHTML = "";

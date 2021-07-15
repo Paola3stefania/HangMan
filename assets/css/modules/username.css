@@ -79,3 +79,13 @@
   display: inline-block;
   margin-right: 0.5rem;
 }
+
+.container__level {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: bold;
+}
+
+.invalid{
+  color:red;
+  border-color: red;
+}
