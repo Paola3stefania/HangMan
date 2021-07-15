@@ -33,8 +33,10 @@ function userRegistration() {
 	wrapper.appendChild(copyNode);
 
 	//botones event listener: start & ranking
-	document.querySelector("link_start").addEventListener("click", goToGame);
-	document.querySelector("link_ranking").addEventListener("click", goToRanking);
+	document.getElementById("link_start").addEventListener("click", goToGame);
+	document
+		.getElementById("link_ranking")
+		.addEventListener("click", goToRanking);
 
 	//save the game level
 	usuario.gameLevel = document.getElementById("main__input-username").value;
