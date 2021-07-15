@@ -76,3 +76,7 @@ function userRegistration() {
 }
 
 export { userRegistration, usuario };
+
+//sacar el evento de la key enter del username
+//temrinar de armar el form
+// validar el largo del username y que sea requerido

@@ -19,7 +19,7 @@ let username = `
           <input type="radio" name="level" id="input-hard" />HARD
         </label>
       </div>
-      
+      </form>
       <a href="#start" type="submit" id="link-start" class="main__link-start">START</a>
       <a href="#ranking" id="link-ranking" class="main__link-ranking">RANKING</a>
       </form>
