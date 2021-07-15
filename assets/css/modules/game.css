@@ -1,0 +1,41 @@
+.keyboard {
+  display: grid; 
+  grid-template-columns: repeat(9, 1fr); 
+  grid-template-rows: repeat(3, 1fr); 
+  gap: 0.5rem;
+  font-weight: bold; 
+}
+
+.container__header {
+  display: flex;
+  justify-content: space-around;
+  width: inherit;
+}
+
+.username__score {
+  display: flex;
+  width: 10rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main__link-username {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 15px;
+}
+
+.main__link-username:hover {
+  color: white;
+  background-color: black;
+}
+
+.footer__game {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 10rem;
+  justify-content: space-around;
+}

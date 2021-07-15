@@ -1,30 +1,30 @@
 // --------------------------------------------USERNAME SCREEN----------------------------------------
 let username = `
 <template id="username">
-    <div class="main__container">
-      <img src="/favicon.svg" alt="" />
-      <h1 class="main__title-game">HANGMAN</h1>
-      <h2 class="main__title-username">INSERT USERNAME</h2>
-      <form id="username-form" action="" method="post">
-        <input id="username-value" maxlength="6" type="text" required />
-        <span id="username-validation">AlphaNumeric</span>
-        <div class="container__level">
-          <label for="input-easy">
-            <input type="radio" name="level" value="easy" id="input-easy" required/>EASY
-          </label>
-          <label for="input-medium">
-            <input type="radio" name="level" value="medium" id="input-medium" />MEDIUM
-          </label>
-          <label for="input-hard">
-            <input type="radio" name="level" value="hard" id="input-hard" />HARD
-          </label>
-        </div>
-        
-        <input id="link-ranking" type="button" value="RANKING" class="main__link-ranking">
-        <input type="submit" id="play" name="play" value="START" class="main__link-start" />
-        </div>
-      </form>
-    
+  <div class="main__container">
+    <img src="/favicon.svg" alt="" />
+    <h1 class="main__title-game">HANGMAN</h1>
+    <h2 class="main__title-username">INSERT USERNAME:</h2>
+    <form class="main__form" id="username-form" action="" method="post">
+      <input id="username-value" maxlength="6" type="text" class="main__input-username" required />
+      <span class="main__input-username-aclaration" id="username-validation">AlphaNumeric</span>
+      <div class="container__level">
+        <label for="input-easy">
+          <input type="radio" name="level" value="easy" id="input-easy" required/>EASY
+        </label>
+        <label for="input-medium">
+          <input type="radio" name="level" value="medium" id="input-medium" />MEDIUM
+        </label>
+        <label for="input-hard">
+          <input type="radio" name="level" value="hard" id="input-hard" />HARD
+        </label>
+      </div>
+      <div class="main__buttons">
+        <input id="link-ranking" type="button" value="RANKING" class="submit-btn main__link-ranking">
+        <input type="submit" id="play" name="play" value="START" class="submit-btn main__link-start"/>
+      </div>
+    </form>
+  </div>
 </template>`;
 
 // --------------------------------------------RANKING SCREEN----------------------------------------
@@ -48,12 +48,14 @@ let ranking = `
 
 let game = `
 <template id="game-screen">
-<div class="main__container">
+  <div class="main__container">
     <header class="container__header">
       <p id="countdown-to-end"></p>
       <h2 id="username-display">USERNAME</h2>
-      <h2 id="score-display">SCORE</h2>
-      <img src="" alt="Star">
+      <div class="username__score">
+				<h2 id="score-display">SCORE</h2>
+      	<img src="" alt="Star">
+			</div>
       <p id="easy-hint"></p>
       <button id="help" >HELP ME</button>
     </header>
@@ -87,7 +89,7 @@ let game = `
 			<button class="btn" id="keyY" data-letter="y">Y</button>
 			<button class="btn" id="keyZ" data-letter="z">Z</button>
 		</div>
-    <footer>
+    <footer class="footer__game">
       <p id="display-hint">HINT</p>
       <a href="#username" class="main__link-username">RESET</a>
     </footer>
