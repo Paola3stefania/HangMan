@@ -2,6 +2,8 @@ import { goToGame, goToRanking, goToUsername } from "../router.js";
 import { wrapper } from "../main.js";
 import { game } from "../templates.js";
 import { usuario } from "./register-user.js";
+import { buttonPressed, blockLetter } from "../keyboard.js";
+import { getGroupOfWords, getRandomWord, displayWord } from "../word.js";
 
 function playGame() {
 	//numero de juegos
@@ -43,12 +45,49 @@ function playGame() {
 		.addEventListener("click", goToUsername);
 
 	//TODO header
-	//Header
-
+	//UserName Header
 	document.getElementById("username-display").innerHTML = usuario.name;
 
+	//UserName Score
+
 	//TODO Hint & Comodin
+	document.getElementById("score-display").innerHTML = usuario.score;
+
+	document.getElementById("easy-hint").innerHTML = "hint";
+
+	//comodin muestra una letra en la palabra
+
 	//TODO Palabra - set used true or false
+	getGroupOfWords();
+	getRandomWord();
+	displayWord();
+
+	//TODO - PALABRA
+	/* KEYBOARD FUNCTIONALITY */
+
+	const KEYS = document.querySelectorAll("[data-letter]"); // We select all elements by the attribute as a NodeList.
+
+	KEYS.forEach((key) => {
+		// Add an event listener for each key button
+		key.addEventListener("click", buttonPressed);
+	});
+
+	/* We evaluate every keyboard event and, if it's a letter, we launch our functions: */
+	document.addEventListener("keydown", (event) => {
+		// ! CARE WITH ALT, TAB, ETC.
+		let letter = event.key;
+		let regExpTest = /[a-z]+/g;
+		let indexWord;
+		if (regExpTest.test(letter)) {
+			indexWord = lookForLetter(letter);
+		}
+		let WORDELEMENTS = document.querySelectorAll("#display-word span");
+		for (const x of indexWord) {
+			WORDELEMENTS[x].innerHTML = letter;
+		}
+		blockLetter(letter); // We block a new interaction with the letter button
+	});
+
 	//TODO Puntuacion
 	//TODO HangMan
 	//TODO Display segun nivel
