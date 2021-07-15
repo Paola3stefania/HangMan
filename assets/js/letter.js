@@ -30,3 +30,7 @@ function wrongLetter(letter) {
   currentErrors += 1;
   console.log("wrong "+letter);
 }
+
+/* EXPORTS */
+
+export { lookForLetter };

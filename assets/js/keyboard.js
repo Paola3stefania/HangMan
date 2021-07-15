@@ -1,3 +1,7 @@
+/* IMPORTS */
+
+import { lookForLetter } from './letter.js';
+
 const KEYS = document.querySelectorAll('[data-letter]'); // We select all elements by the attribute as a NodeList.
 
 KEYS.forEach((key) => { // Add an event listener for each key button
@@ -23,3 +27,7 @@ function buttonPressed() {
   let letter = this.dataset.letter;
   lookForLetter(letter);
 }
+
+/* EXPORTS */
+
+// export {  }
