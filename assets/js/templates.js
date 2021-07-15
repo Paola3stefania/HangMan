@@ -5,7 +5,8 @@ let username = `
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">INSERT USERNAME</h2>
-      <input id="username-value" />
+      <form id="username-form" action="" method="post">
+      <input id="username-value" maxlenght="3" type="text" required/>
       <span id="username-validation">Alphanumeric, max 6 characters</span>
       <div class="container__level">
         <label for="input-easy">
@@ -18,8 +19,10 @@ let username = `
           <input type="radio" name="level" id="input-hard" />HARD
         </label>
       </div>
-      <a href="#start" id="link-start" class="main__link-start">START</a>
+      
+      <a href="#start" type="submit" id="link-start" class="main__link-start">START</a>
       <a href="#ranking" id="link-ranking" class="main__link-ranking">RANKING</a>
+      </form>
     </div>
 </template>`;
 
