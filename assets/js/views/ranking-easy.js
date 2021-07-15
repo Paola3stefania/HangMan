@@ -32,23 +32,40 @@ function rankingEasy() {
 }
 //ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
 
-function finalFunction(){
+function finalFunction() {
   let rankingList = document.querySelectorAll(".main__container-ranking li");
   let myScore = document.createElement("li");
-  newScore.innerHTML = usuario.name + " " + "-" + " " + usuario.timePlayed + " " + "-" + " " + usuario.score;
-  rankingList.appendChild(myScore);
+  newScore.innerHTML =
+    usuario.name +
+    " " +
+    "-" +
+    " " +
+    usuario.timePlayed +
+    " " +
+    "-" +
+    " " +
+    usuario.score; //We create a string that stores old values from old usernames
+  rankingList.appendChild(myScore); //We add the new li to the ordered ranking list
   myRanking(myScore);
 }
 
 function myRanking(myScore) {
   let rankingList = document.querySelectorAll(".main__container-ranking li");
-  //console.log(rankingList);
-  for (i = 0; i < rankingList.length; i++){
-    let otherScore = rankingList[i].substring(rankingList[i].lastIndexOf(" "), rankingList[i].length);
-    console.log(rankingList[i].lastIndexOf(" "))
-    console.log(rankingList[i].substring(rankingList[i].lastIndexOf(" "), rankingList[i].length););
-    if (usuario.score > otherScore){
-      
+  //I need now to iterate across the ranking list and compare the scores
+  for (i = 0; i < rankingList.length; i++) {
+    let otherScore = rankingList[i].substring(
+      rankingList[i].lastIndexOf(" "),
+      rankingList[i].length
+    ); //I am getting the score part from the html text of the li inside the ranking list
+    console.log(rankingList[i].lastIndexOf(" "));
+    console.log(
+      rankingList[i].substring(
+        rankingList[i].lastIndexOf(" "),
+        rankingList[i].length
+      )
+    );
+    if (usuario.score > otherScore) {
+      //If the score is bigger than the other li, add one to its position
     }
   }
 }

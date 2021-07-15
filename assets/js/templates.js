@@ -119,4 +119,4 @@ let gameOver = `
 </template>
 `;
 
-export { username, ranking, gameEasy, youWon, gameOver };
+export { username, ranking, game, youWon, gameOver };
