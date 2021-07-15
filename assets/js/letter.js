@@ -1,3 +1,7 @@
+/* IMPORTS */
+
+// import {  } from './';
+
 let testWord = "pepinillo";
 
 function lookForLetter(letter) {
@@ -6,7 +10,7 @@ function lookForLetter(letter) {
     let test = letter.includes(testWord[i]);
     correct = (test === true) ? correct + 1 : correct + 0;
   }
-  result = (correct > 0) ? correctLetter(letter) : wrongLetter(letter);
+  let result = (correct > 0) ? correctLetter(letter) : wrongLetter(letter);
 }
 
 // FUNCIONALIDADES:

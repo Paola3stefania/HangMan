@@ -10,7 +10,7 @@ let usuario = {
   timePlayed: 0,
   gameLevel: "",
 };
-console.log("hola");
+
 //register user its first screen, so it charges on load.
 //? shows the view of the username
 
@@ -41,6 +41,12 @@ function userRegistration() {
     .getElementById("link-ranking")
     .addEventListener("click", goToRanking);
 
+  document.getElementById("username-value").addEventListener("keydown", (e) => {
+    if (e.key == "Enter") {
+      e.preventDefault();
+    }
+  });
+
   //save the game level
   //usuario.gameLevel = document.getElementById("main__input-username").value;
 
@@ -49,22 +55,24 @@ function userRegistration() {
   // necesito un campo de error tipo span para el USUARIO
 
   const usernameRegexp = /^[a-z0-9]+$/i;
-  const usernameInput = document.getElementById("username-value");
 
-  usernameInput.addEventListener("change", function () {
-    const usernameInputError = document.getElementById("username-validation");
-    const test = usernameRegexp.test(usernameInput.value);
+  document
+    .getElementById("username-value")
+    .addEventListener("change", function () {
+      const usernameInputError = document.getElementById("username-validation");
+      const usernameInput = document.getElementById("username-value");
 
-    if (test) {
-      usernameInputError.innerHTML = "";
+      const test = usernameRegexp.test(usernameInput.value);
 
-      usernameInput.classList.remove("invalid");
-      usuario.name = usernameInput.value;
-    } else {
-      usernameInput.classList.add("invalid");
-      usernameInputError.innerHTML = "Insert valid username";
-    }
-  });
+      if (test) {
+        usernameInput.classList.remove("invalid");
+        usuario.name = usernameInput.value.toString();
+        usernameInputError.innerHTML = "Hola " + usuario.name;
+      } else {
+        usernameInput.classList.add("invalid");
+        usernameInputError.innerHTML = "Insert valid username";
+      }
+    });
 
   //*TODO validate user name
   //<input id="main__input-username" />;

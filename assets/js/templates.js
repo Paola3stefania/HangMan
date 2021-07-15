@@ -5,7 +5,8 @@ let username = `
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">INSERT USERNAME</h2>
-      <input id="username-value" />
+      <form id="username-form" action="" method="post">
+      <input id="username-value" maxlenght="3" type="text" required/>
       <span id="username-validation">Alphanumeric, max 6 characters</span>
       <div class="container__level">
         <label for="input-easy">
@@ -18,8 +19,10 @@ let username = `
           <input type="radio" name="level" id="input-hard" />HARD
         </label>
       </div>
-      <a href="#start" id="link-start" class="main__link-start">START</a>
+      </form>
+      <a href="#start" type="submit" id="link-start" class="main__link-start">START</a>
       <a href="#ranking" id="link-ranking" class="main__link-ranking">RANKING</a>
+      </form>
     </div>
 </template>`;
 
@@ -44,19 +47,47 @@ let ranking = `
 
 let game = `
 <template id="game-screen">
-    <div class="main__container">
-      <div class="container__div-header">
-        <img src="" alt="Clock">
-        <h2>USERNAME</h2>
-        <h2>PUCTUATION</h2>
-        <img src="" alt="Star">
-      </div>
-      <div class="container__div-header-emptyletters"></div>
-      <img src="" alt="Hangman">
-      <div class="container__div-header-keyboard"></div>
-      <h2>HINT</h2>
+  <div class="main__container">
+    <header class="container__header">
+      <p id="countdown-to-end"></p>
+      <h2>USERNAME</h2>
+      <h2>SCORE</h2>
+      <img src="" alt="Star">
+    </header>
+    <div class="container__div-header-emptyletters" id="display-word"></div>
+    <img src="" alt="Hangman">
+    <div class="keyboard" id="keyboard">
+			<button class="btn" id="keyA" data-letter="a">A</button>
+			<button class="btn" id="keyB" data-letter="b">B</button>
+			<button class="btn" id="keyC" data-letter="c">C</button>
+			<button class="btn" id="keyD" data-letter="d">D</button>
+			<button class="btn" id="keyE" data-letter="e">E</button>
+			<button class="btn" id="keyF" data-letter="f">F</button>
+			<button class="btn" id="keyG" data-letter="g">G</button>
+			<button class="btn" id="keyH" data-letter="h">H</button>
+			<button class="btn" id="keyI" data-letter="i">I</button>
+			<button class="btn" id="keyJ" data-letter="j">J</button>
+			<button class="btn" id="keyK" data-letter="k">K</button>
+			<button class="btn" id="keyL" data-letter="l">L</button>
+			<button class="btn" id="keyM" data-letter="m">M</button>
+			<button class="btn" id="keyN" data-letter="n">N</button>
+			<button class="btn" id="keyO" data-letter="o">O</button>
+			<button class="btn" id="keyP" data-letter="p">P</button>
+			<button class="btn" id="keyQ" data-letter="q">Q</button>
+			<button class="btn" id="keyR" data-letter="r">R</button>
+			<button class="btn" id="keyS" data-letter="s">S</button>
+			<button class="btn" id="keyT" data-letter="t">T</button>
+			<button class="btn" id="keyU" data-letter="u">U</button>
+			<button class="btn" id="keyV" data-letter="v">V</button>
+			<button class="btn" id="keyW" data-letter="w">W</button>
+			<button class="btn" id="keyX" data-letter="x">X</button>
+			<button class="btn" id="keyY" data-letter="y">Y</button>
+			<button class="btn" id="keyZ" data-letter="z">Z</button>
+		</div>
+    <footer>
+      <p id="display-hint">HINT</p>
       <a href="#username" class="main__link-username">RESET</a>
-    </div>
+    </footer>
 </template>
 `;
 

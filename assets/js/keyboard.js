@@ -2,6 +2,8 @@
 
 import { lookForLetter } from './letter.js';
 
+/* KEYBOARD FUNCTIONALITY */
+
 const KEYS = document.querySelectorAll('[data-letter]'); // We select all elements by the attribute as a NodeList.
 
 KEYS.forEach((key) => { // Add an event listener for each key button
@@ -30,4 +32,4 @@ function buttonPressed() {
 
 /* EXPORTS */
 
-// export {  }
+export {  }
