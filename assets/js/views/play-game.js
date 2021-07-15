@@ -29,8 +29,8 @@ function playGame() {
 	document
 		.querySelector(".main__link-username")
 		.addEventListener("click", goToUsername);
-	//TODO addEventListener de PAUSE?
 
+	//TODO addEventListener de PAUSE?
 	//ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
 }
 
