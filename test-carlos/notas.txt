@@ -50,3 +50,18 @@ largos de palabras: de 4 letras a 9 max
 armar base de datos de palabras. 
 
 ------
+
+POSIBLES RESULTADOS (GONZALO)
+
+
+** Cada pantalla superada => + 100 puntos y suma la puntuación a la total ** 
+** Comprueba el número de errores => Si errores = 0, + 50 puntos**
+** Comprueba número de palabras usadas => Si + 3, cambia de objeto a una letra más**
+
+a) No supera el juego (no acaba las palabras) => Página de game over con ranking de nivel.
+
+        1. Máximo de fallos (muñequito ahorcado).
+
+        2. Fin del tiempo (sólo modo HARD).
+
+b) Supera el juego (acaba las palabras) => Página de you won con ranking de nivel + 250 puntos.
