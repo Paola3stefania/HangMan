@@ -1,5 +1,6 @@
 import { goToGame, goToRanking, goToUsername } from "../router.js";
 import { wrapper } from "../main.js";
+import { game } from "../templates.js";
 
 function playGame() {
 	//?remove event Listener before deleting de node
