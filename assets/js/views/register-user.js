@@ -8,7 +8,7 @@ let usuario = {
 	score: 0,
 	state: "",
 	timePlayed: 0,
-	gameLevel: "",
+	gameLevel: "easy",
 };
 
 //register user its first screen, so it charges on load.
@@ -38,7 +38,8 @@ function userRegistration() {
 	wrapper.appendChild(copyNode);
 
 	//botones event listener: start & ranking
-	document.getElementById("link-start").addEventListener("click", goToGame);
+	document.querySelector("#username-form").addEventListener("submit", goToGame);
+	//document.getElementById("link-start").addEventListener("click", goToGame);
 	document
 		.getElementById("link-ranking")
 		.addEventListener("click", goToRanking);
@@ -69,7 +70,7 @@ function userRegistration() {
 			if (test) {
 				usernameInput.classList.remove("invalid");
 				usuario.name = usernameInput.value.toString();
-				usernameInputError.innerHTML = "Hola " + usuario.name;
+				usernameInputError.innerHTML = "¡ Hola " + usuario.name + " !";
 			} else {
 				usernameInput.classList.add("invalid");
 				usernameInputError.innerHTML = "Insert valid username";

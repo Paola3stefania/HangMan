@@ -6,24 +6,26 @@ let username = `
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">INSERT USERNAME</h2>
       <form id="username-form" action="" method="post">
-      <input id="username-value" maxlenght="3" type="text" required />
-      <span id="username-validation">Alphanumeric, max 6 characters</span>
-      <div class="container__level">
-        <label for="input-easy">
-          <input type="radio" name="level" id="input-easy" />EASY
-        </label>
-        <label for="input-medium">
-          <input type="radio" name="level" id="input-medium" />MEDIUM
-        </label>
-        <label for="input-hard">
-          <input type="radio" name="level" id="input-hard" />HARD
-        </label>
-      </div>
-      
-      <a href="#start" type="submit" id="link-start" class="main__link-start">START</a>
-      <a href="#ranking" id="link-ranking" class="main__link-ranking">RANKING</a>
+        <input id="username-value" maxlength="6" type="text" required />
+        <span id="username-validation">AlphaNumeric</span>
+        
+        <div class="container__level">
+          <label for="input-easy">
+            <input type="radio" name="level" id="input-easy" required/>EASY
+          </label>
+          <label for="input-medium">
+            <input type="radio" name="level" id="input-medium" />MEDIUM
+          </label>
+          <label for="input-hard">
+            <input type="radio" name="level" id="input-hard" />HARD
+          </label>
+        </div>
+        
+        <input type="submit" id="play" name="play" value="START" class="main__link-start" />
+        <button id="link-ranking" class="main__link-ranking">RANKING</button>
+        </div>
       </form>
-    </div>
+    
 </template>`;
 
 // --------------------------------------------RANKING SCREEN----------------------------------------

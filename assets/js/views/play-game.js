@@ -4,7 +4,10 @@ import { game } from "../templates.js";
 
 function playGame() {
 	//?remove event Listener before deleting de node
-	document.getElementById("link-start").removeEventListener("click", goToGame);
+
+	document
+		.querySelector("#username-form")
+		.removeEventListener("submit", goToGame);
 	document
 		.getElementById("link-ranking")
 		.removeEventListener("click", goToRanking);

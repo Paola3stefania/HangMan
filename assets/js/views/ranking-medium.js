@@ -1,35 +1,37 @@
-import { goToUsername, goToGame } from "../router.js";
+import { goToUsername, goToGame, goToRanking } from "../router.js";
 import { wrapper } from "../main.js";
 
 function rankingMedium() {
-  document.getElementById("link-start").removeEventListener("click", goToGame);
-  document
-    .addElementById("link-ranking")
-    .removeEventListener("click", goToRanking);
+	document
+		.querySelector("#username-form")
+		.removeEventListener("submit", goToGame);
+	document
+		.getElementById("link-ranking")
+		.removeEventListener("click", goToRanking);
 
-  //make sure that the page its empty before doing nothing
-  wrapper.innerHTML = "";
+	//make sure that the page its empty before doing nothing
+	wrapper.innerHTML = "";
 
-  //clone the template of ranking
-  wrapper.insertAdjacentHTML("beforeend", ranking);
+	//clone the template of ranking
+	wrapper.insertAdjacentHTML("beforeend", ranking);
 
-  let rankingNode = document.getElementById("ranking").content;
-  let copyNode = document.importNode(rankingNode, true);
+	let rankingNode = document.getElementById("ranking").content;
+	let copyNode = document.importNode(rankingNode, true);
 
-  //delete de template from the html
-  wrapper.innerHTML = "";
+	//delete de template from the html
+	wrapper.innerHTML = "";
 
-  wrapper.appendChild(copyNode);
+	wrapper.appendChild(copyNode);
 
-  //botones event listener: username & start
+	//botones event listener: username & start
 
-  document
-    .querySelector(".main__link-username")
-    .addEventListener("click", goToUsername);
+	document
+		.querySelector(".main__link-username")
+		.addEventListener("click", goToUsername);
 
-  document
-    .querySelector(".main__link-start")
-    .addEventListener("click", goToGame);
+	document
+		.querySelector(".main__link-start")
+		.addEventListener("click", goToGame);
 }
 //ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
 

@@ -6,6 +6,7 @@ import { winner } from "./views/winner.js";
 
 //---------------------------------------------ROUTER--------------------------------------
 function navigate() {
+	console.log(location.hash);
 	if (
 		location.hash === "#username" ||
 		location.hash === "" ||
