@@ -48,8 +48,8 @@ let ranking = `
 
 // --------------------------------------------GAME EASY SCREEN----------------------------------------
 
-let gameEasy = `
-<template id="game-easy">
+let game = `
+<template id="game-screen">
 <div class="container__div-header">
         <img src="" alt="Clock">
         <h2>USERNAME</h2>

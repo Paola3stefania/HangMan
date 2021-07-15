@@ -1,4 +1,7 @@
 import { userRegistration } from "./views/register-user";
+import { endGame } from "./views/gameover";
+import { playGame } from "./views/play-game";
+import { rankingEasy } from "./views/ranking-easy";
 
 //---------------------------------------------ROUTER--------------------------------------
 function navigate() {
@@ -9,11 +12,13 @@ function navigate() {
   ) {
     userRegistration();
   } else if (location.hash === "#ranking") {
-    buy();
   } else if (location.hash === "#ranking") {
+    rankingEasy();
   } else if (location.hash === "#game") {
+    playGame();
   } else if (location.hash === "#game-over") {
-  } else if (location.hash === "#you-lost") {
+    endGame();
+  } else if (location.hash === "#you-won") {
   }
 }
 
@@ -39,18 +44,11 @@ function goToGameOver(event) {
   window.location.hash = "game_over";
 }
 
-function goToLost(event) {
+function goToWon(event) {
   event.preventDefault();
-  window.location.hash = "you_lost";
+  window.location.hash = "you_won";
 }
 
-//---------------------------------------------EXPORT--------------------------------------
+//---------------------------------------------EXPORT-----------------------------------------
 
-export {
-  navigate,
-  goToGame,
-  goToGameOver,
-  goToLost,
-  goToRanking,
-  goToUsername,
-};
+export { navigate, goToGame, goToGameOver, goToWon, goToRanking, goToUsername };
