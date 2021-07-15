@@ -47,4 +47,4 @@ function userRegistration(){
 }
 
 
-
+export { userRegistration };
