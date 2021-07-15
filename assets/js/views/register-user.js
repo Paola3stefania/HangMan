@@ -58,7 +58,7 @@ function userRegistration(){
     const usernameRegexp= /^[a-z0-9]+$/i;
 
 
-	email.addEventListener("change", function () {
+	username.addEventListener("change", function () {
 		const test = usernameRegexp.test(usernameInput.value);
 
 		if (test) {
