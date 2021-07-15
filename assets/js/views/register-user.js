@@ -8,17 +8,25 @@ let usuario = {
 	score: 0,
 	state: "",
 	timePlayed: 0,
-	gameLevel: "easy",
+	gameLevel: "",
 };
 
 //register user its first screen, so it charges on load.
 //? shows the view of the username
 
 function userRegistration() {
-	if (wrapper.innerHTML != "") {
-		document
-			.querySelector(".main__link-username")
-			.removeEventListener("click", goToUsername);
+	//borrar los que vienen de ranking tmb
+	if (wrapper.firstChild != null) {
+		if (
+			document.getElementById("you-won") ||
+			document.getElementById("game-over") ||
+			document.getElementById("ranking") ||
+			document.getElementById("game")
+		) {
+			document
+				.querySelector(".main__link-username")
+				.removeEventListener("click", goToUsername);
+		}
 		//make sure that the page its empty before doing nothing
 		wrapper.innerHTML = "";
 	}
@@ -39,7 +47,6 @@ function userRegistration() {
 
 	//botones event listener: start & ranking
 	document.querySelector("#username-form").addEventListener("submit", goToGame);
-	//document.getElementById("link-start").addEventListener("click", goToGame);
 	document
 		.getElementById("link-ranking")
 		.addEventListener("click", goToRanking);
@@ -77,8 +84,15 @@ function userRegistration() {
 			}
 		});
 
-	//*TODO validate user name
-	//<input id="main__input-username" />;
+	let radioButtons = document.querySelectorAll('input[name="level"]');
+
+	for (const btn of radioButtons) {
+		btn.addEventListener("click", isChecked);
+	}
+
+	function isChecked(event) {
+		usuario.gameLevel = event.target.value;
+	}
 }
 
 export { userRegistration, usuario };

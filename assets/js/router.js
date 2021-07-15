@@ -2,11 +2,12 @@ import { userRegistration, usuario } from "./views/register-user.js";
 import { endGame } from "./views/gameover.js";
 import { playGame } from "./views/play-game.js";
 import { rankingEasy } from "./views/ranking-easy.js";
+import { rankingMedium } from "./views/ranking-medium.js";
+import { rankingHard } from "./views/ranking-hard.js";
 import { winner } from "./views/winner.js";
 
 //---------------------------------------------ROUTER--------------------------------------
 function navigate() {
-	console.log(location.hash);
 	if (
 		location.hash === "#username" ||
 		location.hash === "" ||

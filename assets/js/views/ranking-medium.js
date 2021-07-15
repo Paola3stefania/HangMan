@@ -1,5 +1,6 @@
 import { goToUsername, goToGame, goToRanking } from "../router.js";
 import { wrapper } from "../main.js";
+import { ranking } from "../templates.js";
 
 function rankingMedium() {
 	document

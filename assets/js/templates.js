@@ -8,19 +8,17 @@ let username = `
       <form id="username-form" action="" method="post">
         <input id="username-value" maxlength="6" type="text" required />
         <span id="username-validation">AlphaNumeric</span>
-        
         <div class="container__level">
           <label for="input-easy">
-            <input type="radio" name="level" id="input-easy" required/>EASY
+            <input type="radio" name="level" value="easy" id="input-easy" required/>EASY
           </label>
           <label for="input-medium">
-            <input type="radio" name="level" id="input-medium" />MEDIUM
+            <input type="radio" name="level" value="medium" id="input-medium" />MEDIUM
           </label>
           <label for="input-hard">
-            <input type="radio" name="level" id="input-hard" />HARD
+            <input type="radio" name="level" value="hard" id="input-hard" />HARD
           </label>
         </div>
-        
         <input type="submit" id="play" name="play" value="START" class="main__link-start" />
         <button id="link-ranking" class="main__link-ranking">RANKING</button>
         </div>

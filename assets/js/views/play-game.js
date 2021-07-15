@@ -1,6 +1,7 @@
 import { goToGame, goToRanking, goToUsername } from "../router.js";
 import { wrapper } from "../main.js";
 import { game } from "../templates.js";
+import { usuario } from "./register-user.js";
 
 function playGame() {
 	//?remove event Listener before deleting de node
@@ -27,8 +28,6 @@ function playGame() {
 	wrapper.appendChild(copyNode);
 
 	//botones event listener: play again
-	//*TODO startGame .. como la llamo Gonza??
-
 	document
 		.querySelector(".main__link-username")
 		.addEventListener("click", goToUsername);
