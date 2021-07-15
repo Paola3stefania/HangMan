@@ -3,16 +3,38 @@
 } */
 
 body {
-  height: 100vh;
-  width: 100vw;
+  height: 90vh;
+  width: 90vw;
+  font-family: "Shadows Into Light", cursive;
 }
 
 .main__container {
   height: 90%;
   width: 90%;
-  margin: 4vh auto;
+  margin: 0 auto;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image: url("../../img/notebook-page.jpg");
+}
+
+.submit-btn {
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+
+
+
+
+/* UTILS */
+
+.hidden {
+  visibility: hidden;
 }

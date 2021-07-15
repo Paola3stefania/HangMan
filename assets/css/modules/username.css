@@ -2,26 +2,21 @@
   font-family: "Gloria Hallelujah", cursive;
 }
 
-.main__title-username {
-  font-family: "Shadows Into Light", cursive;
-}
-
 .container__level {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Shadows Into Light", cursive;
   font-weight: bold;
 }
 
 .main__container {
-  gap: 2vh;
+  padding-top: 2rem;
+  gap: 3rem;
 }
 
 .main__link-start {
   text-decoration: none;
   color: black;
-  /*padding: 1rem;*/
   width: 7rem;
   text-align: center;
   border-bottom: 4px double red;
@@ -88,4 +83,25 @@
 .invalid{
   color:red;
   border-color: red;
+}
+
+.main__input-username {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.main__input-username-aclaration {
+  display: block;
+}
+
+.main__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.select:checked {
+  color: red;
 }
