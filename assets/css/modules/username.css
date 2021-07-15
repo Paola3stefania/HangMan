@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: bold;
 }
 
 .main__container {
@@ -76,9 +78,4 @@
   content: "";
   display: inline-block;
   margin-right: 0.5rem;
-}
-
-.container__level {
-  font-family: "Shadows Into Light", cursive;
-  font-weight: bold;
 }
