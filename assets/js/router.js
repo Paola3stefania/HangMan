@@ -1,7 +1,7 @@
 import { userRegistration, usuario } from "./views/register-user.js";
-import { endGame } from "./views/gameover";
-import { playGame } from "./views/play-game";
-import { rankingEasy } from "./views/ranking-easy";
+import { endGame } from "./views/gameover.js";
+import { playGame } from "./views/play-game.js";
+import { rankingEasy } from "./views/ranking-easy.js";
 
 //---------------------------------------------ROUTER--------------------------------------
 function navigate() {

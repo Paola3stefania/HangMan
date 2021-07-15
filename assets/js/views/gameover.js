@@ -1,31 +1,31 @@
-import { wrapper } from "../main";
+import { wrapper } from "../main.js";
 import { goToUsername } from "../router.js";
 
 function endGame() {
-  //?remove event Listener before deleting the node
+	//?remove event Listener before deleting the node
 
-  //make sure that the page its empty before doing nothing
-  wrapper.innerHTML = "";
+	//make sure that the page its empty before doing nothing
+	wrapper.innerHTML = "";
 
-  //clone the template of game-over
-  wrapper.insertAdjacentHTML("beforeend", gameOver);
+	//clone the template of game-over
+	wrapper.insertAdjacentHTML("beforeend", gameOver);
 
-  let gameOverNode = document.getElementById("game-over").content;
-  let copyNode = document.importNode(gameOverNode, true);
+	let gameOverNode = document.getElementById("game-over").content;
+	let copyNode = document.importNode(gameOverNode, true);
 
-  //delete de template from the html
-  wrapper.innerHTML = "";
+	//delete de template from the html
+	wrapper.innerHTML = "";
 
-  wrapper.appendChild(copyNode);
+	wrapper.appendChild(copyNode);
 
-  //botones event listener: play again
-  //*TODO startGame .. como la llamo Gonza??
+	//botones event listener: play again
+	//*TODO startGame .. como la llamo Gonza??
 
-  document
-    .querySelector(".main__link-username")
-    .addEventListener("click", goToUsername);
+	document
+		.querySelector(".main__link-username")
+		.addEventListener("click", goToUsername);
 
-  //ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
+	//ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
 }
 
 export { endGame };
