@@ -76,12 +76,11 @@ function userRegistration() {
 	//validate name
 	const usernameRegexp = /^[a-z0-9]+$/i;
 
+	const usernameInputError = document.getElementById("username-validation");
+	const usernameInput = document.getElementById("username-value");
 	document
 		.getElementById("username-value")
 		.addEventListener("change", function () {
-			const usernameInputError = document.getElementById("username-validation");
-			const usernameInput = document.getElementById("username-value");
-
 			const test = usernameRegexp.test(usernameInput.value);
 
 			if (test) {
@@ -98,6 +97,9 @@ function userRegistration() {
 		if (usuario.name != "") {
 			console.log(usuario.name);
 			goToRanking(event);
+		} else {
+			usernameInputError.innerHTML = "Insert username";
+			usernameInput.classList.add("invalid");
 		}
 	}
 	//sets the level property into the user

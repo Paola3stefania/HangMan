@@ -13,6 +13,7 @@ function navigate() {
 		location.hash === "" ||
 		location.hash === "#"
 	) {
+		console.log("estoy en el router primer if");
 		userRegistration();
 	} else if (location.hash === "#ranking-easy") {
 		rankingEasy();
