@@ -14,7 +14,14 @@ KEYS.forEach((key) => { // Add an event listener for each key button
 document.addEventListener('keydown', (event) => { // ! CARE WITH ALT, TAB, ETC.
   let letter = event.key;
   let regExpTest = /[a-z]+/g;
-  regExpTest.test(letter) ? lookForLetter(letter) : "";
+  let indexWord
+  if (regExpTest.test(letter)) {
+    indexWord = lookForLetter(letter)
+  }
+  let WORDELEMENTS = document.querySelectorAll('#display-word span')
+  for (const x of indexWord) {
+    WORDELEMENTS[x].innerHTML = letter
+  }
   blockLetter(letter); // We block a new interaction with the letter button
 })
 
@@ -27,8 +34,19 @@ function blockLetter(letter) {
 function buttonPressed() {
   this.setAttribute("disabled", "disabled"); // We block a new interaction with the letter button
   let letter = this.dataset.letter;
-  lookForLetter(letter);
+  let indexWord = lookForLetter(letter)
+  let WORDELEMENTS = document.querySelectorAll('#display-word span')
+  for (const x of indexWord) {
+    WORDELEMENTS[x].innerHTML = letter
+  }
 }
+
+// TODO
+// document.getElementById("username-value").addEventListener("keydown", (e) => {
+//   if (e.key == "Enter") {
+//   e.preventDefault();
+//   }
+//   });
 
 /* EXPORTS */
 
