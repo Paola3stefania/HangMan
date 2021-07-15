@@ -1,4 +1,4 @@
-import { goToRanking, goToGame } from "../router.js";
+import { goToRanking, goToGame, goToUsername } from "../router.js";
 import { wrapper } from "../main.js";
 import { username } from "../templates.js";
 
@@ -15,8 +15,13 @@ let usuario = {
 //? shows the view of the username
 
 function userRegistration() {
-	//make sure that the page its empty before doing nothing
-	wrapper.innerHTML = "";
+	if (wrapper.innerHTML != "") {
+		document
+			.querySelector(".main__link-username")
+			.removeEventListener("click", goToUsername);
+		//make sure that the page its empty before doing nothing
+		wrapper.innerHTML = "";
+	}
 
 	//insert the template HTML in the main.html div app
 	let templateUsername = username;

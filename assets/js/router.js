@@ -2,6 +2,7 @@ import { userRegistration, usuario } from "./views/register-user.js";
 import { endGame } from "./views/gameover.js";
 import { playGame } from "./views/play-game.js";
 import { rankingEasy } from "./views/ranking-easy.js";
+import { winner } from "./views/winner.js";
 
 //---------------------------------------------ROUTER--------------------------------------
 function navigate() {
@@ -22,6 +23,7 @@ function navigate() {
 	} else if (location.hash === "#game-over") {
 		endGame();
 	} else if (location.hash === "#you-won") {
+		winner();
 	}
 }
 
@@ -50,12 +52,12 @@ function goToGame(event) {
 
 function goToGameOver(event) {
 	event.preventDefault();
-	window.location.hash = "game_over";
+	window.location.hash = "game-over";
 }
 
 function goToWon(event) {
 	event.preventDefault();
-	window.location.hash = "you_won";
+	window.location.hash = "you-won";
 }
 
 //---------------------------------------------EXPORT-----------------------------------------
