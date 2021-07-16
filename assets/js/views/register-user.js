@@ -121,12 +121,15 @@ function userRegistration() {
 	// seteo a cero todo cuando entro en registro
 
 	console.log("entre aqui");
+	console.log("soy el usuario", usuario);
 	usuario = {
 		id: 0,
 		name: "",
 		score: 0,
 		currentScore: 0,
 		state: "",
+		timeStart: Date.now(),
+		timeEnd: 0,
 		timePlayed: 0,
 		gameLevel: "",
 		numbersOfPlays: 0,

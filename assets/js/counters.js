@@ -2,7 +2,7 @@
 
 /* NEXT WORD COUNTDOWN */
 
-function nextPageTimer() {
+/* function nextPageTimer() {
 	let nextWordCoundtdown = 5;
 	setInterval(function () {
 		if (nextWordCoundtdown <= 0) {
@@ -15,7 +15,7 @@ function nextPageTimer() {
 		}
 		nextWordCoundtdown -= 1;
 	}, 1000);
-}
+} */
 
 nextPageTimer();
 

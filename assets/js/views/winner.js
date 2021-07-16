@@ -3,6 +3,7 @@ import { wrapper } from "../main.js";
 import { youWon } from "../templates.js";
 import { buttonPressed } from "../keyboard.js";
 import { tecla } from "./play-game.js";
+import { usuario } from "./register-user.js";
 
 function winner() {
 	if (document.getElementById("game-screen")) {
@@ -33,6 +34,10 @@ function winner() {
 
 	wrapper.appendChild(copyNode);
 
+	usuario.timeEnd = Date.now();
+	let timePlayed = usuario.timeEnd - usuario.timeStart;
+	usuario.timePlayed = Math.floor(timePlayed / 1000); //Segundos
+
 	//botones event listener: play again
 	//*TODO startGame .. como la llamo Gonza??
 
@@ -43,4 +48,4 @@ function winner() {
 	//ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
 }
 
-export { winner };
+export { winner, usuario };

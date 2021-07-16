@@ -67,10 +67,18 @@ function playGame() {
 
 		wrapper.appendChild(copyNode);
 
-		//botones event listener: play again
+		//botones event listener: play again: RESET
 		document
 			.querySelector(".main__link-username")
-			.addEventListener("click", goToUsername);
+			.addEventListener("click", reset);
+
+		function reset() {
+			usuario.timeEnd = Date.now();
+
+			let timePlayed = usuario.timeEnd - usuario.timeStart;
+			usuario.timePlayed = Math.floor(timePlayed / 1000); //Segundos
+			goToUsername();
+		}
 
 		//UserName Header
 		document.getElementById("username-display").innerHTML = usuario.name;
