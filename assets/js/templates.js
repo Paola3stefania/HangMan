@@ -54,13 +54,13 @@ let game = `
       <h2 id="username-display">USERNAME</h2>
       <div class="username__score">
 				<h2 id="score-display">SCORE</h2>
-      	<img src="" alt="Star">
+      	<img class="img__game" src="assets/img/star.png" alt="Star">
 			</div>
       <p id="easy-hint"></p>
       <button id="help" >HELP ME</button>
     </header>
     <div class="container__div-header-emptyletters" id="display-word"></div>
-    <img src="assets/img/hangman-0.jpg" alt="Hangman">
+    <img id="hangman" src="assets/img/hangman-0.jpg" alt="Hangman">
     <div class="keyboard" id="keyboard">
 			<button class="btn" id="keyA" data-letter="a">A</button>
 			<button class="btn" id="keyB" data-letter="b">B</button>

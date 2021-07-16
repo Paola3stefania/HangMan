@@ -2,6 +2,7 @@
 
 import { playGame } from "./views/play-game.js";
 import { currentWord } from "./word.js";
+import { goToGameOver } from "./router.js";
 
 let currentCorrect = 0; // lo tiene que hacer el display word
 let currentLength;
@@ -43,7 +44,7 @@ function correctLetter(letter, correct) {
 	console.log("correct " + currentCorrect);
 
 	let WORDELEMENTS = document.querySelectorAll("#display-word span");
-	console.log("holasoy index", index);
+	console.log("hola soy index", index);
 	if (index.length > 0) {
 		for (const x of index) {
 			WORDELEMENTS[x].innerHTML = letter;
@@ -58,6 +59,14 @@ function wrongLetter(letter) {
 	currentErrors += 1;
 	console.log("wrong " + letter);
 	console.log("error " + currentErrors);
+
+	document
+		.getElementById("hangman")
+		.setAttribute("src", "assets/img/hangman-" + currentErrors + ".jpg");
+	if (currentErrors == 7) {
+		currentErrors = 0;
+		goToGameOver();
+	}
 }
 
 export { lookForLetter };

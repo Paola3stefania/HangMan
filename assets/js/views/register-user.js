@@ -7,6 +7,42 @@ import { username } from "../templates.js";
 
 let usuario = {};
 
+let usuarios = [
+	{
+		id: 0,
+		name: "Marcel",
+		score: 200,
+		currentScore: 0,
+		state: "playing",
+		timePlayed: 97,
+		gameLevel: "easy",
+		numbersOfPlays: 2,
+		numberOfErrors: 0,
+	},
+	{
+		id: 0,
+		name: "Tefa",
+		score: 500,
+		currentScore: 0,
+		state: "game over",
+		timePlayed: 37,
+		gameLevel: "easy",
+		numbersOfPlays: 3,
+		numberOfErrors: 7,
+	},
+	{
+		id: 0,
+		name: "Pere",
+		score: 100,
+		currentScore: 0,
+		state: "playinf",
+		timePlayed: 130,
+		gameLevel: "easy",
+		numbersOfPlays: 0,
+		numberOfErrors: 0,
+	},
+];
+
 function userRegistration() {
 	// seteo a cero todo cuando entro en registro
 
@@ -15,12 +51,13 @@ function userRegistration() {
 		id: 0,
 		name: "",
 		score: 0,
+		currentScore: 0,
 		state: "",
 		timePlayed: 0,
 		gameLevel: "",
 		numbersOfPlays: 0,
+		numberOfErrors: 0,
 	};
-	console.log(usuario);
 
 	//borrar los que vienen de ranking tmb
 	if (wrapper.firstChild != null) {
@@ -53,7 +90,12 @@ function userRegistration() {
 	wrapper.appendChild(copyNode);
 
 	//botones event listener: start & ranking
-	document.querySelector("#username-form").addEventListener("submit", goToGame);
+	document.querySelector("#username-form").addEventListener("submit", register);
+
+	function register(event) {
+		usuarios.push(usuario);
+		goToGame(event);
+	}
 	document
 		.getElementById("link-ranking")
 		.addEventListener("click", showRanking);
@@ -105,4 +147,4 @@ function userRegistration() {
 	}
 } //end UserRegistration
 
-export { userRegistration, usuario };
+export { userRegistration, usuario, usuarios };

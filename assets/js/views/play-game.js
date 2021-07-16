@@ -1,4 +1,10 @@
-import { goToGame, goToRanking, goToUsername, goToWon } from "../router.js";
+import {
+	goToGame,
+	goToGameOver,
+	goToRanking,
+	goToUsername,
+	goToWon,
+} from "../router.js";
 import { wrapper } from "../main.js";
 import { game } from "../templates.js";
 import { usuario } from "./register-user.js";

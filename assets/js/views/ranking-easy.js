@@ -1,16 +1,19 @@
 import { goToUsername, goToRanking } from "../router.js";
 import { goToGame } from "../router.js";
 import { wrapper } from "../main.js";
-import { usuario } from "./register-user.js";
+import { usuario, usuarios } from "./register-user.js";
 import { ranking } from "../templates.js";
 
 function rankingEasy() {
-	document
-		.querySelector("#username-form")
-		.removeEventListener("submit", goToGame);
-	document
-		.getElementById("link-ranking")
-		.removeEventListener("click", goToRanking);
+	if (document.getElementById("username")) {
+		console.log("borre event listener de usuario");
+		document
+			.querySelector("#username-form")
+			.removeEventListener("submit", goToGame);
+		document
+			.getElementById("link-ranking")
+			.removeEventListener("click", goToRanking);
+	}
 
 	//make sure that the page its empty before doing nothing
 	wrapper.innerHTML = "";
@@ -35,27 +38,32 @@ function rankingEasy() {
 	document
 		.querySelector(".main__link-start")
 		.addEventListener("click", goToGame);
+
+	rankingOrder();
 }
 
 //Examples as if there were previous game records
-let superArray = [
+/* let superArray = [
 	{ id: 0, name: "Marcel", score: 200, timePlayed: 97, gameLevel: "easy" },
 	{ id: 0, name: "Tefa", score: 500, timePlayed: 37, gameLevel: "easy" },
 	{ id: 0, name: "Pere", score: 100, timePlayed: 130, gameLevel: "easy" },
-];
+]; */
+
+let superArray = usuarios;
 //New username example
-let usuarioB = {
+/* let usuarioB = {
 	id: 0,
 	name: "Carlos",
 	score: 250,
 	state: "",
 	timePlayed: 32,
 	gameLevel: "easy",
-};
+}; 
 
 function finalFunction() {
 	superArray.push(usuarioB); //In the final function (whenever the game ends), the username is pushed to the superarray
 }
+*/
 
 function rankingOrder() {
 	superArray = superArray.sort(function (a, b) {
@@ -69,8 +77,8 @@ function rankingOrder() {
 			return 0;
 		}
 	});
-	console.log(superArray);
-	for (let i = 0; i < superArray.length; i++) {
+	//muestro solo los primeros 5 usuarios
+	for (let i = 0; i < 5; i++) {
 		//Now we want for each of the objects inside the array to print a message in the list
 		let rankingList = document.querySelector(".main__container-ranking ol"); //List selected
 		let myScore = document.createElement("li");
@@ -82,6 +90,5 @@ function rankingOrder() {
 }
 
 //finalFunction();
-//rankingOrder();
 
 export { rankingEasy };
