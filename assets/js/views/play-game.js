@@ -48,21 +48,7 @@ function playGame() {
 
 	//make sure that the page its empty before doing nothing
 	wrapper.innerHTML = "";
-	function tecla(event) {
-		console.log("estoy en funcion tecla");
-		if (
-			event.key == "Enter" ||
-			event.key == "Control" ||
-			event.key == "CapsLock" ||
-			event.key == "Shift" ||
-			event.key == " "
-		) {
-			event.preventDefault();
-		} else {
-			blockLetter(event.key); // We block a new interaction with the letter button
-			lookForLetter(event.key);
-		}
-	}
+
 	/* We evaluate every keyboard event and, if it's a letter, we launch our functions: */
 	window.addEventListener("keydown", tecla);
 
@@ -117,5 +103,21 @@ function playGame() {
 		});
 	}
 }
+function tecla(event) {
+	console.log("estoy en funcion tecla");
+	if (
+		event.key == "Enter" ||
+		event.key == "Control" ||
+		event.key == "CapsLock" ||
+		event.key == "Shift" ||
+		event.key == " " ||
+		event.key == "ñ"
+	) {
+		event.preventDefault();
+	} else {
+		blockLetter(event.key); // We block a new interaction with the letter button
+		lookForLetter(event.key);
+	}
+}
 
-export { playGame };
+export { playGame, tecla };

@@ -3,11 +3,22 @@ import { goToUsername } from "../router.js";
 import { gameOver } from "../templates.js";
 
 function endGame() {
-	document
-		.querySelector(".main__link-username")
-		.removeEventListener("click", goToUsername);
-
 	//make sure that the page its empty before doing nothing
+
+	if (document.getElementById("game-screen")) {
+		console.log("borre event listener de game screen");
+		document
+			.querySelector(".main__link-username")
+			.removeEventListener("click", goToUsername);
+
+		let KEYS = document.querySelectorAll("[data-letter]");
+		KEYS.forEach((key) => {
+			// Add an event listener for each key button
+			key.removeEventListener("click", buttonPressed);
+		});
+		window.removeEventListener("keydown", tecla);
+	}
+
 	wrapper.innerHTML = "";
 
 	//clone the template of game-over

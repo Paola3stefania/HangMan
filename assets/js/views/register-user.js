@@ -1,6 +1,8 @@
 import { goToRanking, goToGame, goToUsername } from "../router.js";
 import { wrapper } from "../main.js";
 import { username } from "../templates.js";
+import { buttonPressed } from "../keyboard.js";
+import { tecla } from "./play-game.js";
 
 //register user its first screen, so it charges on load.
 //? shows the view of the username
@@ -136,12 +138,27 @@ function userRegistration() {
 		if (
 			document.getElementById("you-won") ||
 			document.getElementById("game-over") ||
-			document.getElementById("ranking") ||
-			document.getElementById("game")
+			document.getElementById("ranking")
 		) {
+			//es el reset
 			document
 				.querySelector(".main__link-username")
 				.removeEventListener("click", goToUsername);
+		} else if (document.getElementById("game-screen")) {
+			document
+				.querySelector(".main__link-username")
+				.removeEventListener("click", goToUsername);
+			console.log("borre event listener de game screen");
+			document
+				.querySelector(".main__link-username")
+				.removeEventListener("click", goToUsername);
+
+			let KEYS = document.querySelectorAll("[data-letter]");
+			KEYS.forEach((key) => {
+				// Add an event listener for each key button
+				key.removeEventListener("click", buttonPressed);
+			});
+			window.removeEventListener("keydown", tecla);
 		}
 		//make sure that the page its empty before doing nothing
 		wrapper.innerHTML = "";
