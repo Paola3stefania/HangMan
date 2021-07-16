@@ -11,7 +11,12 @@
   justify-content: space-around;
   width: inherit;
   align-items: center;
+  padding: 1rem;
 }
+
+.container__div-header-emptyletters{
+    font-size: x-large;
+    font-weight: bold;}
 
 .username__score {
   display: flex;
