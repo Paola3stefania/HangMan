@@ -3,9 +3,19 @@ import { wrapper } from "../main.js";
 import { youWon } from "../templates.js";
 
 function winner() {
-	document
-		.querySelector(".main__link-username")
-		.removeEventListener("click", goToUsername);
+	if (document.getElementById("game-screen")) {
+		console.log("borre event listener de game screen");
+		document
+			.querySelector(".main__link-username")
+			.removeEventListener("click", goToUsername);
+
+		let KEYS = document.querySelectorAll("[data-letter]");
+		KEYS.forEach((key) => {
+			// Add an event listener for each key button
+			key.removeEventListener("click", buttonPressed);
+		});
+		window.removeEventListener("keydown", tecla);
+	}
 
 	//make sure that the page its empty before doing nothing
 	wrapper.innerHTML = "";

@@ -34,26 +34,44 @@ function getGroupOfWords() {
 function getRandomWord() {
 	// To select a random word from our group, we need a random number from 1 to 10 (amount of words in each group)
 	let position = getRandomNumber(1, 10); // Max number, if we want escalation, should be a variable that measures the max key in the object
-	currentWord = currentGroup[position].word;
-	currentHint = currentGroup[position].hint;
-	currentGroup[position].displayed = true;
-}
 
-function displayWord() {
-	const DISPLAYWORD = document.getElementById("display-word");
-	console.log(DISPLAYWORD); // We look for the element in the HTML where we are going to print our word
-	const DISPLAYHINT = document.getElementById("easy-hint"); // We look for the element in the HTML where we are going to print our hint
-
-	for (let i = 0; i < currentWord.length; i++) {
-		console.log(currentWord);
-		let element = document.createElement("span");
-		// element.innerHTML = currentWord[i];
-		element.style.paddingLeft = "10px";
-		DISPLAYWORD.appendChild(element);
-		DISPLAYHINT.innerHTML = currentHint;
+	//Solo si no se ha usado
+	if (!currentGroup[position].displayed) {
+		currentWord = currentGroup[position].word;
+		currentHint = currentGroup[position].hint;
+		currentGroup[position].displayed = true;
 	}
 }
 
-// /* EXPORTS */
+let contadorPalabra = 0;
+function displayWord() {
+	//dos por grupo
+	contadorPalabra += 1;
+	document.getElementById("display-word").innerHTML = "";
 
-export { currentWord, displayWord, getRandomWord, getGroupOfWords };
+	//poner a cero las current correct
+	if (contadorPalabra > 2) {
+		currentLetters = currentLetters + 1;
+		contadorPalabra = 0;
+	}
+
+	getGroupOfWords();
+	getRandomWord();
+
+	console.log(document.getElementById("display-word")); // We look for the element in the HTML where we are going to print our word
+
+	const DISPLAYHINT = document.getElementById("easy-hint"); // We look for the element in the HTML where we are going to print our hint
+	DISPLAYHINT.innerHTML = currentHint;
+
+	for (let i = 0; i < currentWord.length; i++) {
+		let element = document.createElement("span");
+		element.style.paddingLeft = "10px";
+		element.innerHTML = "";
+		//document.getElementById("display-word").appendChild(element);
+		document
+			.getElementById("display-word")
+			.insertAdjacentElement("afterbegin", element);
+	}
+}
+
+export { currentWord, currentGroup, displayWord };

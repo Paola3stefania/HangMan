@@ -53,13 +53,11 @@ function goToGame(event) {
 	window.location.hash = "game";
 }
 
-function goToGameOver(event) {
-	event.preventDefault();
+function goToGameOver() {
 	window.location.hash = "game-over";
 }
 
-function goToWon(event) {
-	event.preventDefault();
+function goToWon() {
 	window.location.hash = "you-won";
 }
 

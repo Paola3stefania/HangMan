@@ -1,7 +1,7 @@
 // --------------------------------------------USERNAME SCREEN----------------------------------------
 let username = `
 <template id="username">
-    <div class="main__container">
+    <div id="username" class="main__container">
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">INSERT USERNAME</h2>
@@ -31,7 +31,7 @@ let username = `
 
 let ranking = `
 <template id="ranking">
-    <div class="main__container">
+    <div id="ranking" class="main__container">
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">BEST PLAYERS</h2>
@@ -48,7 +48,7 @@ let ranking = `
 
 let game = `
 <template id="game-screen">
-<div class="main__container">
+<div id="game-screen" class="main__container">
     <header class="container__header">
       <p id="countdown-to-end"></p>
       <h2 id="username-display">USERNAME</h2>
@@ -58,7 +58,7 @@ let game = `
       <button id="help" >HELP ME</button>
     </header>
     <div class="container__div-header-emptyletters" id="display-word"></div>
-    <img src="" alt="Hangman">
+    <img src="assets/img/hangman-0.jpg" alt="Hangman">
     <div class="keyboard" id="keyboard">
 			<button class="btn" id="keyA" data-letter="a">A</button>
 			<button class="btn" id="keyB" data-letter="b">B</button>
@@ -99,7 +99,7 @@ let game = `
 
 let youWon = `
 <template id="you-won">
-  <div class="main__container">
+  <div id="you-won" class="main__container">
     <img src="/favicon.svg" alt="" />
     <h1 class="main__title-game">HANGMAN</h1>
     <h2>USERNAME, YOU BEAT THE GAME</h2>
@@ -117,7 +117,7 @@ let youWon = `
 
 let gameOver = `
 <template id="game-over">
-  <div class="main__container">
+  <div id="game-over" class="main__container">
     <img src="/favicon.svg" alt="" />
     <h1 class="main__title-game">HANGMAN</h1>
     <h2>NICE TRY, USERNAME</h2>
