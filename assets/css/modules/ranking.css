@@ -1,0 +1,8 @@
+.main__container-ranking li {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.main__title-username {
+  border-bottom: 4px double red;
+}

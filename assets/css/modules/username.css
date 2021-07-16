@@ -15,7 +15,13 @@
 }
 
 .main__link-start {
-  text-decoration: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  cursor: pointer;
   color: black;
   width: 7rem;
   text-align: center;
@@ -46,7 +52,9 @@
 
 .main__link-ranking {
   text-decoration: none;
+  background-color: rgba(127, 127, 127, 0);
   color: black;
+  border: 0;
   /*padding: 1rem;*/
   width: 7rem;
   text-align: center;
@@ -80,8 +88,8 @@
   font-weight: bold;
 }
 
-.invalid{
-  color:red;
+.invalid {
+  color: red;
   border-color: red;
 }
 
@@ -93,6 +101,9 @@
 
 .main__input-username-aclaration {
   display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: darkblue;
 }
 
 .main__form {

@@ -55,9 +55,8 @@ let game = `
       <h2 id="username-display">USERNAME</h2>
       <div class="username__score">
 				<h2 id="score-display" class="score__game__display">SCORE</h2>
-      	<img class="img__game" src="assets/img/star.png" alt="Star">
+      	<img class="img__game" src="assets/img/estrellita.svg" alt="Star">
 			</div>
-      <p id="easy-hint"></p>
       <button id="help" >HELP ME</button>
     </header>
     <p class="countdown" id="countdown-to-next"></p>
@@ -92,6 +91,7 @@ let game = `
 			<button class="btn" id="keyY" data-letter="y">Y</button>
 			<button class="btn" id="keyZ" data-letter="z">Z</button>
 		</div>
+    <p id="easy-hint" class="main__paragraph-hint"></p>
     <footer class="footer__game">
     <section><h4 id="score-display-total" class="score__total__game__display"></h2></section>
       <a href="#username" class="main__link-username">RESET</a>

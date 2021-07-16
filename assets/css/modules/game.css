@@ -1,9 +1,23 @@
 .keyboard {
-  display: grid; 
-  grid-template-columns: repeat(9, 1fr); 
-  grid-template-rows: repeat(3, 1fr); 
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 0.5rem;
-  font-weight: bold; 
+  font-weight: bold;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+}
+
+.btn:hover {
+  background-color: rgb(73, 70, 70);
+}
+
+.btn:disabled {
+  background-color: white;
+  color: black;
 }
 
 .container__header {
@@ -14,9 +28,16 @@
   padding: 1rem;
 }
 
-.container__div-header-emptyletters{
-    font-size: x-large;
-    font-weight: bold;}
+.container__div-header-emptyletters {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.container__div-header-emptyletters span {
+  border-bottom: 2px solid red;
+  margin: 1rem 0.5rem;
+  min-width: 1rem;
+}
 
 .username__score {
   display: flex;
@@ -25,11 +46,12 @@
   align-items: center;
 }
 
-.score__total__game__display{
+.score__total__game__display {
   font-size: xx-large;
+  border-bottom: 4px double red;
 }
 
-.score__game__display{
+.score__game__display {
   font-size: xxx-large;
 }
 
@@ -54,11 +76,18 @@
   justify-content: space-around;
 }
 
-.img__game{
+.img__game {
   width: 15%;
 }
 
-.countdown{
+.countdown {
   font-weight: bolder;
   color: red;
+}
+
+.main__paragraph-hint {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: darkblue;
 }
