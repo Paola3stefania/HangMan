@@ -34,7 +34,7 @@ let ranking = `
     <div id="ranking" class="main__container">
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
-      <h2 class="main__title-username">BEST PLAYERS</h2>
+      <h2 id="ranking-subtitle" class="main__title-username">BEST PLAYERS</h2>
       <section class="main__container-ranking">
         <ol></ol>
       </section>

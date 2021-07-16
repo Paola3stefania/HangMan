@@ -1,10 +1,12 @@
-import { goToUsername, goToGame, goToRanking } from "../router.js";
+import { goToUsername, goToRanking } from "../router.js";
+import { goToGame } from "../router.js";
 import { wrapper } from "../main.js";
+import { usuariosHard } from "./register-user.js";
 import { ranking } from "../templates.js";
-import { usuario } from "./register-user.js";
 
 function rankingHard() {
 	if (document.getElementById("username")) {
+		console.log("borre event listener de usuario");
 		document
 			.querySelector("#username-form")
 			.removeEventListener("submit", goToGame);
@@ -36,7 +38,36 @@ function rankingHard() {
 	document
 		.querySelector(".main__link-start")
 		.addEventListener("click", goToGame);
+
+	document.getElementById("ranking-subtitle").innerHTML =
+		"BEST PLAYERS - LEVEL HARD";
+	rankingOrder();
 }
-//ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
+
+let superArray = usuariosHard;
+
+function rankingOrder() {
+	superArray = superArray.sort(function (a, b) {
+		//All this function orders the superarray comparing one element with the others
+		if (a.score > b.score) {
+			return -1;
+		}
+		if (a.score < b.score) {
+			return 1;
+		} else {
+			return 0;
+		}
+	});
+	//muestro solo los primeros 5 usuarios
+	for (let i = 0; i < 5; i++) {
+		//Now we want for each of the objects inside the array to print a message in the list
+		let rankingList = document.querySelector(".main__container-ranking ol"); //List selected
+		let myScore = document.createElement("li");
+		myScore.innerHTML = `${superArray[i].name} - ${superArray[i].timePlayed} seconds - ${superArray[i].score} points`;
+		rankingList.appendChild(myScore); //We add the new li to the ordered ranking list
+		console.log(rankingList);
+		console.log(myScore);
+	}
+}
 
 export { rankingHard };

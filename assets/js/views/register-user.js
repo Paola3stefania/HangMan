@@ -43,6 +43,78 @@ let usuarios = [
 	},
 ];
 
+let usuariosHard = [
+	{
+		id: 0,
+		name: "Carlos",
+		score: 200,
+		currentScore: 0,
+		state: "playing",
+		timePlayed: 97,
+		gameLevel: "hard",
+		numbersOfPlays: 2,
+		numberOfErrors: 0,
+	},
+	{
+		id: 0,
+		name: "Manu",
+		score: 500,
+		currentScore: 0,
+		state: "game over",
+		timePlayed: 37,
+		gameLevel: "hard",
+		numbersOfPlays: 3,
+		numberOfErrors: 7,
+	},
+	{
+		id: 0,
+		name: "Paris",
+		score: 100,
+		currentScore: 0,
+		state: "playinf",
+		timePlayed: 130,
+		gameLevel: "hard",
+		numbersOfPlays: 0,
+		numberOfErrors: 0,
+	},
+];
+
+let usuariosMedium = [
+	{
+		id: 0,
+		name: "Romina",
+		score: 200,
+		currentScore: 0,
+		state: "playing",
+		timePlayed: 97,
+		gameLevel: "medium",
+		numbersOfPlays: 2,
+		numberOfErrors: 0,
+	},
+	{
+		id: 0,
+		name: "Oliver",
+		score: 500,
+		currentScore: 0,
+		state: "game over",
+		timePlayed: 37,
+		gameLevel: "medium",
+		numbersOfPlays: 3,
+		numberOfErrors: 7,
+	},
+	{
+		id: 0,
+		name: "Charlie",
+		score: 100,
+		currentScore: 0,
+		state: "playinf",
+		timePlayed: 130,
+		gameLevel: "medium",
+		numbersOfPlays: 0,
+		numberOfErrors: 0,
+	},
+];
+
 function userRegistration() {
 	// seteo a cero todo cuando entro en registro
 
@@ -147,4 +219,4 @@ function userRegistration() {
 	}
 } //end UserRegistration
 
-export { userRegistration, usuario, usuarios };
+export { userRegistration, usuario, usuarios, usuariosHard, usuariosMedium };

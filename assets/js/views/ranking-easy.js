@@ -1,7 +1,7 @@
 import { goToUsername, goToRanking } from "../router.js";
 import { goToGame } from "../router.js";
 import { wrapper } from "../main.js";
-import { usuario, usuarios } from "./register-user.js";
+import { usuarios } from "./register-user.js";
 import { ranking } from "../templates.js";
 
 function rankingEasy() {
@@ -39,6 +39,8 @@ function rankingEasy() {
 		.querySelector(".main__link-start")
 		.addEventListener("click", goToGame);
 
+	document.getElementById("ranking-subtitle").innerHTML =
+		"BEST PLAYERS - LEVEL EASY";
 	rankingOrder();
 }
 
