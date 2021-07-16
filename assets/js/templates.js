@@ -53,12 +53,13 @@ let game = `
       <p id="countdown-to-end"></p>
       <h2 id="username-display">USERNAME</h2>
       <div class="username__score">
-				<h2 id="score-display">SCORE</h2>
+				<h2 id="score-display" class="score__game__display">SCORE</h2>
       	<img class="img__game" src="assets/img/star.png" alt="Star">
 			</div>
       <p id="easy-hint"></p>
       <button id="help" >HELP ME</button>
     </header>
+    
     <div class="container__div-header-emptyletters" id="display-word"></div>
     <img id="hangman" src="assets/img/hangman-0.jpg" alt="Hangman">
     <div class="keyboard" id="keyboard">
@@ -90,7 +91,7 @@ let game = `
 			<button class="btn" id="keyZ" data-letter="z">Z</button>
 		</div>
     <footer class="footer__game">
-      <p id="display-hint">HINT</p>
+    <section><h4 id="score-display-total" class="score__total__game__display"></h2></section>
       <a href="#username" class="main__link-username">RESET</a>
     </footer>
   </div>

@@ -10,6 +10,7 @@
   display: flex;
   justify-content: space-around;
   width: inherit;
+  align-items: center;
 }
 
 .username__score {
@@ -17,6 +18,14 @@
   width: 10rem;
   justify-content: space-around;
   align-items: center;
+}
+
+.score__total__game__display{
+  font-size: xx-large;
+}
+
+.score__game__display{
+  font-size: xxx-large;
 }
 
 .main__link-username {

@@ -14,6 +14,7 @@ import { lookForLetter, showFirstLetter } from "../letter.js";
 
 function playGame() {
 	//numero de juegos
+
 	usuario.numbersOfPlays += 1;
 	//?remove event Listener before deleting de node
 
@@ -66,6 +67,7 @@ function playGame() {
 	window.addEventListener("keydown", tecla);
 
 	if (usuario.numbersOfPlays == 5) {
+		usuario.score = usuario.score + 250;
 		goToWon();
 	} else {
 		//clone the template of game
@@ -84,42 +86,35 @@ function playGame() {
 			.querySelector(".main__link-username")
 			.addEventListener("click", goToUsername);
 
-		//TODO header
 		//UserName Header
 		document.getElementById("username-display").innerHTML = usuario.name;
 
 		//UserName Score
 
-		//TODO Hint & Comodin
 		document.getElementById("score-display").innerHTML = usuario.currentScore;
+
+		document.getElementById("score-display-total").innerHTML =
+			"Total Score: " + usuario.score;
 
 		if (usuario.gameLevel == "easy") {
 			document.getElementById("easy-hint").innerHTML = "hint";
-		} else if (usuario.gameLevel == "medium" || usuario.gameLevel == "hard") {
+		} else if (usuario.gameLevel == "medium") {
 			document.getElementById("easy-hint").innerHTML = "No hint in this level";
+		} else if (usuario.gameLevel == "hard") {
+			document.getElementById("easy-hint").innerHTML = "No hint in this level";
+			document.querySelector("#help").innerHTML = "NO HELP";
+			document.querySelector("#help").setAttribute("disabled", "disabled");
 		}
 
 		document.querySelector("#help").addEventListener("click", showFirstLetter);
 
-		//comodin muestra una letra en la palabra
-
-		//TODO Palabra - set used true or false
 		displayWord();
-
-		console.log(currentGroup);
-
-		//TODO - PALABRA
-		/* KEYBOARD FUNCTIONALITY */
 
 		let KEYS = document.querySelectorAll("[data-letter]"); // We select all elements by the attribute as a NodeList.
 		KEYS.forEach((key) => {
 			// Add an event listener for each key button
 			key.addEventListener("click", buttonPressed);
 		});
-
-		//TODO Puntuacion
-		//TODO HangMan
-		//TODO Display segun nivel
 	}
 }
 

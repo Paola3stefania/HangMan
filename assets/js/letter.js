@@ -4,19 +4,27 @@ import { playGame } from "./views/play-game.js";
 import { currentWord } from "./word.js";
 import { goToGameOver } from "./router.js";
 import { blockLetter } from "./keyboard.js";
+import { usuario } from "./views/register-user.js";
 
 let currentCorrect = 0; // lo tiene que hacer el display word
 let currentLength;
-
+let currentScore = 0;
 let wordPlaying;
 let index = [];
 
 function lookForLetter(letter) {
+	//adivino la palabra
 	if (currentCorrect === currentLength) {
 		console.log(currentWord + " guessed");
 		currentCorrect = 0;
 		currentErrors = 0;
+		currentScore = currentScore + 100;
 
+		//por ganar sin errar bonus !
+		if (currentErrors == 0) {
+			currentScore = currentScore + 50;
+		}
+		usuario.score = currentScore;
 		playGame();
 		//go to next word
 	} else {
@@ -52,6 +60,8 @@ function correctLetter(letter, correct) {
 	currentCorrect += correct;
 	console.log("correct " + letter);
 	console.log("correct " + currentCorrect);
+	currentScore = currentScore + 20;
+	document.getElementById("score-display").innerHTML = currentScore;
 
 	let WORDELEMENTS = document.querySelectorAll("#display-word span");
 	console.log("hola soy index", index);
@@ -69,14 +79,19 @@ function wrongLetter(letter) {
 	currentErrors += 1;
 	console.log("wrong " + letter);
 	console.log("error " + currentErrors);
+	currentScore = currentScore - 10;
+	document.getElementById("score-display").innerHTML = currentScore;
 
 	document
 		.getElementById("hangman")
 		.setAttribute("src", "assets/img/hangman-" + currentErrors + ".jpg");
 	if (currentErrors == 7) {
+		usuario.currentScore = currentScore;
 		currentErrors = 0;
+		currentScore = 0;
+		console.log(usuario);
 		goToGameOver();
 	}
 }
 
-export { lookForLetter, showFirstLetter };
+export { lookForLetter, showFirstLetter, currentScore, usuario };

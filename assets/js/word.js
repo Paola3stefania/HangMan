@@ -1,5 +1,6 @@
 /* IMPORTS */
 
+import { usuario } from "./views/register-user.js";
 import {
 	fourLetter,
 	fiveLetter,
@@ -30,7 +31,6 @@ function getGroupOfWords() {
 	currentGroup = group;
 }
 
-// TODO - THIS FUNCTION SHOULD DISPLAY WORDS THAT HAVE NOT BEEN DISPLAYED BEFORE
 function getRandomWord() {
 	// To select a random word from our group, we need a random number from 1 to 10 (amount of words in each group)
 	let position = getRandomNumber(1, 10); // Max number, if we want escalation, should be a variable that measures the max key in the object
@@ -60,14 +60,16 @@ function displayWord() {
 
 	console.log(document.getElementById("display-word")); // We look for the element in the HTML where we are going to print our word
 
-	const DISPLAYHINT = document.getElementById("easy-hint"); // We look for the element in the HTML where we are going to print our hint
-	DISPLAYHINT.innerHTML = currentHint;
+	if (usuario.gameLevel == "easy") {
+		const DISPLAYHINT = document.getElementById("easy-hint"); // We look for the element in the HTML where we are going to print our hint
+		DISPLAYHINT.innerHTML = currentHint;
+	}
 
 	for (let i = 0; i < currentWord.length; i++) {
 		let element = document.createElement("span");
 		element.style.paddingLeft = "10px";
 		element.innerHTML = "";
-		//document.getElementById("display-word").appendChild(element);
+
 		document
 			.getElementById("display-word")
 			.insertAdjacentElement("afterbegin", element);
