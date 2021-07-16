@@ -1,6 +1,8 @@
 import { wrapper } from "../main.js";
 import { goToUsername } from "../router.js";
 import { gameOver } from "../templates.js";
+import { buttonPressed } from "../keyboard.js";
+import { tecla } from "./play-game.js";
 
 function endGame() {
 	//make sure that the page its empty before doing nothing
