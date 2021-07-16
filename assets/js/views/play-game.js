@@ -10,7 +10,7 @@ import { game } from "../templates.js";
 import { usuario } from "./register-user.js";
 import { buttonPressed, blockLetter } from "../keyboard.js";
 import { displayWord, currentGroup } from "../word.js";
-import { lookForLetter } from "../letter.js";
+import { lookForLetter, showFirstLetter } from "../letter.js";
 
 function playGame() {
 	//numero de juegos
@@ -91,9 +91,15 @@ function playGame() {
 		//UserName Score
 
 		//TODO Hint & Comodin
-		document.getElementById("score-display").innerHTML = usuario.score;
+		document.getElementById("score-display").innerHTML = usuario.currentScore;
 
-		document.getElementById("easy-hint").innerHTML = "hint";
+		if (usuario.gameLevel == "easy") {
+			document.getElementById("easy-hint").innerHTML = "hint";
+		} else if (usuario.gameLevel == "medium" || usuario.gameLevel == "hard") {
+			document.getElementById("easy-hint").innerHTML = "No hint in this level";
+		}
+
+		document.querySelector("#help").addEventListener("click", showFirstLetter);
 
 		//comodin muestra una letra en la palabra
 

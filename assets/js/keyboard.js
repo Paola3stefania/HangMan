@@ -14,7 +14,6 @@ function blockLetter(letter) {
 	if (letrasEnTeclado.includes(letter)) {
 		for (let i = 0; i < KEYS.length; i++) {
 			if (letter == KEYS[i].getAttribute("data-letter")) {
-				console.log("this is data letter", KEYS[i].getAttribute("data-letter"));
 				KEYS[i].setAttribute("disabled", "disabled");
 				return console.log(letter);
 			}

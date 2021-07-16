@@ -3,6 +3,7 @@
 import { playGame } from "./views/play-game.js";
 import { currentWord } from "./word.js";
 import { goToGameOver } from "./router.js";
+import { blockLetter } from "./keyboard.js";
 
 let currentCorrect = 0; // lo tiene que hacer el display word
 let currentLength;
@@ -38,6 +39,15 @@ function lookForLetter(letter) {
 
 // FUNCIONALIDADES:
 
+function showFirstLetter() {
+	let letter = currentWord[0];
+	lookForLetter(letter);
+	document.querySelector("#help").setAttribute("disabled", "disabled");
+	blockLetter(letter);
+	wordPlaying = currentWord.substr[1];
+	console.log(wordPlaying);
+}
+
 function correctLetter(letter, correct) {
 	currentCorrect += correct;
 	console.log("correct " + letter);
@@ -69,4 +79,4 @@ function wrongLetter(letter) {
 	}
 }
 
-export { lookForLetter };
+export { lookForLetter, showFirstLetter };
