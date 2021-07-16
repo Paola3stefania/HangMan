@@ -5,9 +5,9 @@ let username = `
       <img src="/favicon.svg" alt="" />
       <h1 class="main__title-game">HANGMAN</h1>
       <h2 class="main__title-username">INSERT USERNAME</h2>
-      <form id="username-form" action="" method="post">
-        <input id="username-value" maxlength="6" type="text" required />
-        <span id="username-validation">AlphaNumeric</span>
+      <form class="main__form"  id="username-form" action="" method="post">
+        <input id="username-value" maxlength="6" type="text" class="main__input-username" required />
+        <span class="main__input-username-aclaration" id="username-validation">AlphaNumeric</span>
         <div class="container__level">
           <label for="input-easy">
             <input type="radio" name="level" value="easy" id="input-easy" required/>EASY
@@ -19,35 +19,11 @@ let username = `
             <input type="radio" name="level" value="hard" id="input-hard" />HARD
           </label>
         </div>
-        
+        <div class="main__buttons">
         <input id="link-ranking" type="button" value="RANKING" class="main__link-ranking">
         <input type="submit" id="play" name="play" value="START" class="main__link-start" />
         </div>
       </form>
-    
-  <div class="main__container">
-    <img src="/favicon.svg" alt="" />
-    <h1 class="main__title-game">HANGMAN</h1>
-    <h2 class="main__title-username">INSERT USERNAME:</h2>
-    <form class="main__form" id="username-form" action="" method="post">
-      <input id="username-value" maxlength="6" type="text" class="main__input-username" required />
-      <span class="main__input-username-aclaration" id="username-validation">AlphaNumeric</span>
-      <div class="container__level">
-        <label for="input-easy">
-          <input type="radio" name="level" value="easy" id="input-easy" required/>EASY
-        </label>
-        <label for="input-medium">
-          <input type="radio" name="level" value="medium" id="input-medium" />MEDIUM
-        </label>
-        <label for="input-hard">
-          <input type="radio" name="level" value="hard" id="input-hard" />HARD
-        </label>
-      </div>
-      <div class="main__buttons">
-        <input id="link-ranking" type="button" value="RANKING" class="submit-btn main__link-ranking">
-        <input type="submit" id="play" name="play" value="START" class="submit-btn main__link-start"/>
-      </div>
-    </form>
   </div>
 </template>`;
 
