@@ -4,6 +4,9 @@ import { youWon } from "../templates.js";
 import { buttonPressed } from "../keyboard.js";
 import { tecla } from "./play-game.js";
 import { usuario } from "./register-user.js";
+import { rankingEasy } from "./ranking-easy.js";
+import { rankingMedium } from "./ranking-medium.js";
+import { rankingHard } from "./ranking-hard.js";
 
 function winner() {
 	if (document.getElementById("game-screen")) {
@@ -45,6 +48,19 @@ function winner() {
 	document
 		.querySelector(".main__link-username")
 		.addEventListener("click", goToUsername);
+
+	printRanking();
+
+	function printRanking() {
+		let gameLevel = usuario.gameLevel;
+		if (gameLevel === "easy") {
+			rankingEasy();
+		} else if (gameLevel === "medium") {
+			rankingMedium();
+		} else if (gameLevel === "hard") {
+			rankingHard();
+		}
+	}
 
 	//ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
 }
