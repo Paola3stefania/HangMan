@@ -36,7 +36,6 @@ function endGame() {
 	wrapper.appendChild(copyNode);
 
 	//botones event listener: play again
-	//*TODO startGame .. como la llamo Gonza??
 
 	document
 		.querySelector(".main__link-username")
