@@ -185,7 +185,14 @@ function userRegistration() {
 	document.querySelector("#username-form").addEventListener("submit", register);
 
 	function register(event) {
-		usuarios.push(usuario);
+		if (usuario.gameLevel == "easy") {
+			usuarios.push(usuario);
+		} else if (usuario.gameLevel == "medium") {
+			usuariosMedium.push(usuario);
+		} else if (usuario.gameLevel == "hard") {
+			usuariosHard.push(usuario);
+		}
+
 		goToGame(event);
 	}
 	document

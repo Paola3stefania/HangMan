@@ -67,6 +67,8 @@ function playGame() {
 
 		wrapper.appendChild(copyNode);
 
+		usuario.state = "playing";
+
 		//botones event listener: play again: RESET
 		document
 			.querySelector(".main__link-username")

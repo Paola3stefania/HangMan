@@ -37,6 +37,7 @@ function winner() {
 	usuario.timeEnd = Date.now();
 	let timePlayed = usuario.timeEnd - usuario.timeStart;
 	usuario.timePlayed = Math.floor(timePlayed / 1000); //Segundos
+	usuario.state = "won";
 
 	//botones event listener: play again
 	//*TODO startGame .. como la llamo Gonza??

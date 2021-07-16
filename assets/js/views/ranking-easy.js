@@ -44,28 +44,7 @@ function rankingEasy() {
 	rankingOrder();
 }
 
-//Examples as if there were previous game records
-/* let superArray = [
-	{ id: 0, name: "Marcel", score: 200, timePlayed: 97, gameLevel: "easy" },
-	{ id: 0, name: "Tefa", score: 500, timePlayed: 37, gameLevel: "easy" },
-	{ id: 0, name: "Pere", score: 100, timePlayed: 130, gameLevel: "easy" },
-]; */
-
 let superArray = usuarios;
-//New username example
-/* let usuarioB = {
-	id: 0,
-	name: "Carlos",
-	score: 250,
-	state: "",
-	timePlayed: 32,
-	gameLevel: "easy",
-}; 
-
-function finalFunction() {
-	superArray.push(usuarioB); //In the final function (whenever the game ends), the username is pushed to the superarray
-}
-*/
 
 function rankingOrder() {
 	superArray = superArray.sort(function (a, b) {

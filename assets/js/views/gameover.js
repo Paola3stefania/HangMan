@@ -46,6 +46,7 @@ function endGame() {
 
 	let timePlayed = usuario.timeEnd - usuario.timeStart;
 	usuario.timePlayed = Math.floor(timePlayed / 1000); //Segundos
+	usuario.state = "game over";
 	console.log(usuario);
 
 	//ranking funcion que vaya a cada vista segun la eleccion de easy medium hard
