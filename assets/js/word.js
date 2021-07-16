@@ -1,15 +1,5 @@
-/* IMPORTS */
-
 import { usuario } from "./views/register-user.js";
-import {
-	fourLetter,
-	fiveLetter,
-	sixLetter,
-	sevenLetter,
-	eightLetter,
-	nineLetter,
-	wordsInPlay,
-} from "./wordsDatabase.js";
+import { wordsInPlay } from "./wordsDatabase.js";
 
 /* WORD FUNCTIONALITY */
 

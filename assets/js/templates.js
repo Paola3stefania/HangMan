@@ -51,6 +51,7 @@ let game = `
 <div id="game-screen" class="main__container">
     <header class="container__header">
       <p id="countdown-to-end"></p>
+      <p id="countdown-to-next"></p>
       <h2 id="username-display">USERNAME</h2>
       <div class="username__score">
 				<h2 id="score-display" class="score__game__display">SCORE</h2>

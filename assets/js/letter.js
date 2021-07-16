@@ -12,21 +12,43 @@ let currentScore = 0;
 let wordPlaying;
 let index = [];
 
-function lookForLetter(letter) {
-	//adivino la palabra
-	if (currentCorrect === currentLength) {
-		console.log(currentWord + " guessed");
-		currentCorrect = 0;
-		currentErrors = 0;
-		currentScore = currentScore + 100;
-
-		//por ganar sin errar bonus !
-		if (currentErrors == 0) {
-			currentScore = currentScore + 50;
+function adivinado() {
+	let nextWordCoundtdown = 5;
+	setInterval(function () {
+		if (nextWordCoundtdown <= 0) {
+			document.getElementById("countdown-to-next").innerHTML = "";
+		} else {
+			document.getElementById(
+				"countdown-to-next"
+			).innerHTML = `Prepare yourself: ${nextWordCoundtdown} seconds remaining`;
 		}
-		usuario.score = currentScore;
-		playGame();
-		//go to next word
+		nextWordCoundtdown -= 1;
+	}, 1000);
+
+	nextScreen();
+}
+
+function nextScreen() {
+	console.log(currentWord + " guessed");
+	currentCorrect = 0;
+	currentErrors = 0;
+	currentScore = currentScore + 100;
+
+	var timeoutNow = setTimeout(playGame, 6000);
+
+	//por ganar sin errar bonus !
+	if (currentErrors == 0) {
+		currentScore = currentScore + 50;
+	}
+	usuario.score = currentScore;
+
+	//go to next word
+}
+function lookForLetter(letter) {
+	currentLength = currentWord.length;
+	//adivino la palabra
+	if (currentCorrect == currentLength) {
+		adivinado();
 	} else {
 		currentLength = currentWord.length;
 		wordPlaying = currentWord;
