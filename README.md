@@ -1,7 +1,6 @@
 # HangMan
 
-Develop a Game - Play with Assembler
-
+Develop a Game e
 In this game you will play Hangman in which you will have to discover the hidden word by choosing letters.
 
 ## Phase 1
